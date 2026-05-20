@@ -1,0 +1,2129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sébastien Di Martino — Réhabilitation Sportive & Préparation Physique</title>
+<meta name="description" content="Kinésithérapeute du sport & préparateur physique. Réhabilitation sportive à distance, téléconsultation, bilans fonctionnels. Suivi personnalisé pour retrouver ton meilleur niveau.">
+<meta name="keywords" content="kiné du sport, réhabilitation sportive, téléconsultation kiné, préparateur physique, Sébastien Di Martino, sebkinesport, rééducation distance">
+<meta name="author" content="Sébastien Di Martino">
+<meta property="og:title" content="Sébastien Di Martino — Réhabilitation Sportive">
+<meta property="og:description" content="Kinésithérapeute du sport & préparateur physique. Suivi à distance, téléconsultation, bilans fonctionnels.">
+<meta property="og:url" content="https://sebkinesport.fr">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://sebkinesport.fr">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Barlow+Condensed:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: #F2EBD9;
+  color: #1A1A1A;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  cursor: none;
+  width: 100%;
+  min-height: 100vh;
+}
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-thumb { background: #6B7C3F; }
+::selection { background: #6B7C3F; color: #fff; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ── VARIABLES ── */
+:root {
+  --vert: #6B7C3F;
+  --vert-d: #556430;
+  --beige: #F2EBD9;
+  --beige2: #EAE0CA;
+  --beige3: #DDD3BB;
+  --charbon: #1A1A1A;
+  --charbon2: #2D2D2D;
+  --gris: #888;
+  --gris-txt: #555;
+
+  /* aliases pour compatibilité */
+  --jaune: #6B7C3F;
+  --jaune-d: #556430;
+  --noir: #F2EBD9;
+  --noir2: #EAE0CA;
+  --noir3: #DDD3BB;
+  --blanc: #1A1A1A;
+}
+
+/* ── CURSOR ── */
+#cur-dot, #cur-ring {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width .2s, height .2s, border-color .2s, background .2s;
+}
+#cur-dot  { width: 8px;  height: 8px;  background: var(--vert); }
+#cur-ring { width: 34px; height: 34px; border: 1.5px solid rgba(107,124,63,.35); z-index: 9998; transition: width .35s, height .35s, border-color .35s; }
+body:has(a:hover) #cur-dot  { width: 18px; height: 18px; }
+body:has(a:hover) #cur-ring { width: 52px; height: 52px; border-color: var(--vert); }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  padding: 0 5vw;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+  background: #fff;
+  border-bottom: 2px solid var(--vert);
+  box-shadow: 0 2px 20px rgba(26,26,26,.08);
+  transition: box-shadow .3s;
+}
+nav.scrolled {
+  box-shadow: 0 4px 30px rgba(26,26,26,.13);
+}
+.nav-logo {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: .04em;
+  line-height: 1;
+  color: var(--charbon);
+}
+.nav-logo em { color: var(--vert); font-style: normal; }
+.nav-sub {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .48rem;
+  font-weight: 600;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--gris);
+  margin-top: 3px;
+}
+.nav-links { display: flex; gap: 0; align-items: center; list-style: none; height: 72px; }
+.nav-links li { height: 100%; display: flex; align-items: center; }
+.nav-links a {
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(26,26,26,.55);
+  transition: color .2s, background .2s;
+  padding: 0 1.2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid rgba(26,26,26,.06);
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--vert);
+  transform: scaleX(0);
+  transition: transform .2s;
+}
+.nav-links a:hover { color: var(--vert); background: rgba(107,124,63,.04); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-links li:first-child a { border-left: 1px solid rgba(26,26,26,.06); }
+.nav-cta {
+  background: var(--vert) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  padding: 0 1.6rem !important;
+  letter-spacing: .18em !important;
+  border: none !important;
+  border-radius: 0 !important;
+  height: 100% !important;
+  clip-path: none !important;
+  transition: background .2s !important;
+  margin-left: .5rem;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--vert-d) !important; color: #fff !important; }
+.nav-kines {
+  background: var(--vert) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  clip-path: none !important;
+  border: none !important;
+}
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 44%;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 65% at 75% 45%, rgba(107,124,63,.1) 0%, transparent 60%),
+    radial-gradient(ellipse 35% 50% at 10% 75%, rgba(107,124,63,.06) 0%, transparent 55%);
+}
+.hero-bigword {
+  position: absolute;
+  right: -1%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(200px,32vw,460px);
+  line-height: 1;
+  color: rgba(107,124,63,.06);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -.02em;
+}
+.hero-vline {
+  position: absolute;
+  left: 56%;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: rgba(107,124,63,.07);
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: lineGrow 1.2s .3s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes lineGrow { to { transform: scaleY(1); } }
+
+.hero-left {
+  padding: 10rem 4rem 6rem 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  border: 1px solid rgba(107,124,63,.4);
+  color: var(--vert-d);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  padding: .4rem 1rem;
+  margin-bottom: 2.2rem;
+  width: fit-content;
+  opacity: 0;
+  animation: fadeUp .7s .1s cubic-bezier(.22,1,.36,1) forwards;
+  background: rgba(107,124,63,.07);
+}
+.badge-dot {
+  width: 6px; height: 6px;
+  background: var(--vert);
+  border-radius: 50%;
+  animation: blink 1.4s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.15} }
+
+.hero-title {
+  font-family: 'Anton', sans-serif;
+  line-height: .88;
+  letter-spacing: -.01em;
+  margin-bottom: 2rem;
+}
+.hero-title .w1 {
+  display: block;
+  font-size: clamp(4.5rem,9.5vw,8.5rem);
+  color: var(--charbon);
+  opacity: 0;
+  animation: fadeUp .85s .2s cubic-bezier(.22,1,.36,1) forwards;
+}
+.hero-title .w2 {
+  display: block;
+  font-size: clamp(4.5rem,9.5vw,8.5rem);
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--vert);
+  opacity: 0;
+  animation: fadeUp .85s .33s cubic-bezier(.22,1,.36,1) forwards;
+}
+.hero-title .w3 {
+  display: block;
+  font-size: clamp(4.5rem,9.5vw,8.5rem);
+  color: var(--vert);
+  opacity: 0;
+  animation: fadeUp .85s .46s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(26,26,26,.55);
+  max-width: 380px;
+  margin-bottom: 2.8rem;
+  opacity: 0;
+  animation: fadeUp .7s .62s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2.8rem;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(26,26,26,.1);
+  opacity: 0;
+  animation: fadeUp .7s .74s cubic-bezier(.22,1,.36,1) forwards;
+}
+.stat-n {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.8rem;
+  color: var(--vert);
+  line-height: 1;
+}
+.stat-l {
+  font-size: .62rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gris);
+  margin-top: .25rem;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp .7s .86s cubic-bezier(.22,1,.36,1) forwards;
+}
+.btn-y {
+  display: inline-block;
+  background: var(--vert);
+  color: #fff;
+  font-weight: 700;
+  font-size: .78rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  padding: 1.1rem 2.6rem;
+  clip-path: polygon(9px 0%,100% 0%,calc(100% - 9px) 100%,0% 100%);
+  transition: background .2s, transform .15s;
+}
+.btn-y:hover { background: var(--vert-d); transform: translateY(-2px); }
+.btn-o {
+  display: inline-block;
+  color: var(--charbon);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  padding: 1.1rem 2.2rem;
+  border: 1px solid rgba(26,26,26,.2);
+  transition: border-color .2s, color .2s, background .2s;
+}
+.btn-o:hover { border-color: var(--vert); color: var(--vert); background: rgba(107,124,63,.05); }
+
+/* hero right */
+.hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7rem 4vw 4rem 2rem;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeRight 1s .25s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes fadeRight { from { opacity:0; transform:translateX(50px); } to { opacity:1; transform:none; } }
+
+.photo-wrap { position: relative; }
+.photo-diamond {
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 78px; height: 78px;
+  border: 1px solid rgba(107,124,63,.4);
+  clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%);
+  animation: spin 14s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.photo-corner-tl {
+  position: absolute; top: -1px; left: -1px;
+  width: 38px; height: 38px;
+  border-top: 2px solid var(--vert);
+  border-left: 2px solid var(--vert);
+}
+.photo-corner-br {
+  position: absolute; bottom: -1px; right: -1px;
+  width: 38px; height: 38px;
+  border-bottom: 2px solid var(--vert);
+  border-right: 2px solid var(--vert);
+}
+.photo-box {
+  width: 340px;
+  height: 490px;
+  background: var(--beige2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: .8rem;
+  position: relative;
+  overflow: hidden;
+}
+.photo-box::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(107,124,63,.04) 0%, transparent 55%);
+}
+.photo-box::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
+  background: linear-gradient(to top, rgba(237,232,223,.7), transparent);
+}
+.photo-icon { font-size: 3rem; opacity: .14; position: relative; z-index: 1; }
+.photo-lbl  { font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; opacity: .18; font-weight: 500; position: relative; z-index: 1; }
+.photo-tag {
+  position: absolute;
+  bottom: -16px; left: -24px;
+  background: var(--vert);
+  color: var(--charbon);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: .92rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .6rem 1.5rem;
+  clip-path: polygon(0 0,100% 0,calc(100% - 9px) 100%,0 100%);
+}
+.photo-socials {
+  position: absolute;
+  right: -52px; top: 50%;
+  transform: translateY(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: .8rem;
+}
+.photo-socials span { width: 1px; height: 36px; background: rgba(26,26,26,.12); }
+.photo-socials a {
+  writing-mode: vertical-rl;
+  font-size: .6rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(26,26,26,.3);
+  transition: color .2s;
+}
+.photo-socials a:hover { color: var(--vert); }
+
+/* scroll hint */
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem; left: 5vw;
+  display: flex; align-items: center; gap: .8rem;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeUp .7s 1.6s ease forwards;
+}
+.scroll-line {
+  width: 1px; height: 44px;
+  background: linear-gradient(to bottom, var(--vert), transparent);
+  animation: scrollBob 1.8s ease-in-out infinite;
+}
+@keyframes scrollBob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(10px)} }
+.scroll-txt { font-size: .6rem; letter-spacing: .28em; text-transform: uppercase; color: rgba(26,26,26,.28); }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:none; } }
+
+/* ── TICKER ── */
+.ticker {
+  overflow: hidden;
+  padding: .7rem 0;
+  border-top: 1px solid rgba(107,124,63,.1);
+  border-bottom: 1px solid rgba(107,124,63,.1);
+  white-space: nowrap;
+}
+.ticker.yellow-bg { background: var(--vert); border-color: rgba(107,124,63,.15); }
+.ticker-track {
+  display: inline-flex;
+  animation: tickL 22s linear infinite;
+}
+.ticker.yellow-bg .ticker-track { animation: tickR 22s linear infinite; }
+@keyframes tickR { from { transform:translateX(-50%); } to { transform:translateX(0); } }
+@keyframes tickL { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+.ticker-item {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  padding: 0 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.ticker .ticker-item { color: rgba(107,124,63,.9); }
+.ticker.yellow-bg .ticker-item { color: var(--vert); }
+.ticker-dot { width: 4px; height: 4px; border-radius: 50%; background: currentColor; opacity: .4; }
+
+/* ── SECTIONS ── */
+.sec {
+  width: 100%;
+  padding: 7rem 5vw;
+  position: relative;
+  overflow: hidden;
+}
+.sec-dark  { background: var(--noir2); }
+.sec-black { background: var(--noir); }
+.sec-dark3 { background: var(--beige2); }
+
+.sec-tag {
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--vert);
+  margin-bottom: .8rem;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+.sec-tag::after { content:''; flex:1; max-width:50px; height:1px; background:var(--jaune); }
+
+.sec-tag.on-yellow { color: var(--charbon); }
+.sec-tag.on-yellow::after { background: var(--noir); }
+
+.sec-title {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(2.8rem,5vw,5rem);
+  line-height: .92;
+  letter-spacing: .01em;
+  margin-bottom: 1.2rem;
+}
+.sec-title .y { color: var(--vert); }
+.sec-title .on-yellow-title { color: var(--charbon); }
+
+/* reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(44px);
+  transition: opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1);
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-d2 { transition-delay: .1s !important; }
+.reveal-d3 { transition-delay: .2s !important; }
+.reveal-d4 { transition-delay: .3s !important; }
+.reveal-d5 { transition-delay: .4s !important; }
+
+/* ── SERVICES ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1px;
+  margin-top: 3.5rem;
+  background: rgba(107,124,63,.05);
+}
+.svc-card {
+  padding: 2.8rem 2.4rem;
+  background: var(--noir2);
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid rgba(107,124,63,.06);
+  transition: background .3s, border-color .3s;
+  cursor: default;
+}
+.svc-card:hover { background: #fff; border-color: var(--vert); box-shadow: 0 6px 24px rgba(107,124,63,.15); }
+.svc-num {
+  position: absolute; top: 1.2rem; right: 2rem;
+  font-family: 'Anton', sans-serif;
+  font-size: 5rem;
+  color: rgba(107,124,63,.03);
+  line-height: 1;
+  pointer-events: none;
+}
+.svc-icon { font-size: 2rem; margin-bottom: 1.4rem; display: block; transition: transform .3s; }
+.svc-card:hover .svc-icon { transform: scale(1.18) rotate(-8deg); }
+.svc-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-bottom: .6rem;
+  color: var(--charbon);
+  transition: color .3s;
+}
+.svc-card:hover .svc-name { color: var(--vert); }
+.svc-desc { font-size: .86rem; line-height: 1.75; color: rgba(26,26,26,.55); margin-bottom: 1.4rem; }
+.svc-price {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--vert);
+  letter-spacing: .02em;
+  margin-bottom: 1rem;
+  background: rgba(107,124,63,.08);
+  display: inline-block;
+  padding: .3rem .8rem;
+}
+.svc-link {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(26,26,26,.28);
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  transition: color .2s, transform .2s;
+}
+.svc-card:hover .svc-link { color: var(--vert); }
+.svc-link .arr { transition: transform .2s; }
+.svc-card:hover .svc-link .arr { transform: translateX(5px); }
+
+/* ── ABOUT ── */
+.about-strip {
+  width: 100%;
+  background: #556430;
+  padding: 5rem 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 4rem;
+  align-items: start;
+}
+.about-title {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(2rem,3.5vw,3.2rem);
+  line-height: .92;
+  color: #ffffff;
+  letter-spacing: .01em;
+  margin-bottom: 1.2rem;
+}
+.about-title .outline { -webkit-text-stroke: 1.5px rgba(255,255,255,.6); color: transparent; }
+.about-btn {
+  display: inline-block;
+  background: #1A1A1A;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: .76rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  padding: .95rem 2.3rem;
+  clip-path: polygon(7px 0%,100% 0%,calc(100% - 7px) 100%,0% 100%);
+  transition: background .2s;
+  margin-top: .5rem;
+}
+.about-btn:hover { background: #333; }
+.about-desc {
+  font-size: .95rem;
+  line-height: 1.9;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+.about-stat { border-top: 2px solid rgba(255,255,255,.5); padding-top: .8rem; }
+.about-stat-n { font-family: 'Anton', sans-serif; font-size: 1.5rem; color: #ffffff; line-height: 1; }
+.about-stat-l { font-size: .65rem; font-weight: 700; color: #ffffff; opacity: .85; letter-spacing: .1em; text-transform: uppercase; margin-top: .25rem; }
+
+/* ── ÉQUIPE ── */
+.equipe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+}
+.equipe-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1.2rem;
+}
+.kine-card { cursor: default; }
+.kine-photo-wrap {
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.kine-photo {
+  aspect-ratio: 3/4;
+  background: var(--beige3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: .5rem;
+  position: relative;
+  transition: transform .5s cubic-bezier(.22,1,.36,1);
+}
+.kine-card:hover .kine-photo { transform: scale(1.06); }
+.kine-photo-icon { font-size: 2.5rem; opacity: .13; }
+.kine-photo-txt  { font-size: .62rem; letter-spacing: .15em; text-transform: uppercase; opacity: .15; font-weight: 500; }
+.kine-ybar {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: var(--vert);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s cubic-bezier(.22,1,.36,1);
+}
+.kine-card:hover .kine-ybar { transform: scaleX(1); }
+.kine-info { transition: transform .3s; }
+.kine-card:hover .kine-info { transform: translateX(4px); }
+.kine-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: .3rem;
+  color: var(--charbon);
+  transition: color .3s;
+}
+.kine-card:hover .kine-name { color: var(--vert); }
+.kine-spe { font-size: .75rem; color: rgba(26,26,26,.55); letter-spacing: .08em; text-transform: uppercase; font-weight: 500; margin-bottom: .5rem; }
+.kine-tag { display: inline-block; border: 1px solid rgba(107,124,63,.3); color: rgba(107,124,63,.7); font-size: .6rem; padding: .22rem .6rem; letter-spacing: .12em; text-transform: uppercase; }
+.kine-bio { font-size: .82rem; line-height: 1.7; color: rgba(26,26,26,.55); margin-top: .7rem; }
+
+/* ── TÉLÉCONSULT ── */
+.tele-wrap {
+  width: 100%;
+  background: var(--beige2);
+  padding: 6rem 5vw;
+  border-top: 1px solid rgba(107,124,63,.15);
+  border-bottom: 1px solid rgba(107,124,63,.15);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(107,124,63,.08);
+  border-bottom: 1px solid rgba(107,124,63,.08);
+}
+.tele-bg-word {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(5rem,14vw,13rem);
+  color: rgba(107,124,63,.022);
+  white-space: nowrap;
+  letter-spacing: .03em;
+  pointer-events: none;
+  user-select: none;
+}
+.tele-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.tele-title {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(3rem,5.5vw,5.5rem);
+  line-height: .9;
+  letter-spacing: .01em;
+}
+.tele-title .y { color: var(--vert); }
+.tele-title .out { -webkit-text-stroke: 1.5px rgba(26,26,26,.25); color: transparent; }
+.tele-desc { font-size: 1rem; line-height: 1.8; color: rgba(26,26,26,.6); margin-bottom: 2.5rem; }
+.tele-step {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+.tele-step-n {
+  width: 36px; height: 36px;
+  background: var(--vert);
+  color: var(--charbon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  clip-path: polygon(4px 0%,100% 0%,calc(100% - 4px) 100%,0% 100%);
+}
+.tele-step-t { font-size: .9rem; color: rgba(26,26,26,.65); }
+
+/* ── PROGRAMMES ── */
+.prog-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+.prog-card {
+  background: var(--noir);
+  border: 1px solid rgba(107,124,63,.07);
+  padding: 2.8rem;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%);
+  transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s;
+  cursor: default;
+}
+.prog-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(107,124,63,.1); }
+.prog-card.feat { background: var(--vert); border: none; color: #fff; }
+.prog-card.feat:hover { box-shadow: 0 30px 60px rgba(107,124,63,.25); }
+.prog-badge {
+  position: absolute; top: 1.4rem; right: 1.4rem;
+  background: var(--noir);
+  color: var(--vert);
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: .22rem .65rem;
+}
+.prog-lvl { font-size: .6rem; letter-spacing: .3em; text-transform: uppercase; font-weight: 600; color: rgba(107,124,63,.6); margin-bottom: .7rem; }
+.prog-card.feat .prog-lvl { color: rgba(6,6,6,.55); }
+.prog-name { font-family: 'Anton', sans-serif; font-size: 2.4rem; letter-spacing: .01em; color: var(--charbon); margin-bottom: .6rem; line-height: 1; }
+.prog-card.feat .prog-name { color: #fff; }
+.prog-desc { font-size: .84rem; line-height: 1.65; color: rgba(26,26,26,.4); margin-bottom: 1.5rem; }
+.prog-card.feat .prog-desc { color: rgba(6,6,6,.62); }
+.prog-feats { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-bottom: 2rem; }
+.prog-feats li { font-size: .82rem; color: rgba(26,26,26,.52); display: flex; align-items: center; gap: .65rem; }
+.prog-card.feat .prog-feats li { color: rgba(6,6,6,.75); }
+.prog-feats li::before { content: '✓'; color: var(--vert); font-weight: 800; }
+.prog-card.feat .prog-feats li::before { color: #fff; font-weight: 900; }
+.prog-price { font-family: 'Anton', sans-serif; font-size: 3rem; color: var(--vert); line-height: 1; margin-bottom: 1.5rem; }
+.prog-card.feat .prog-price { color: #fff; }
+.prog-price small { font-family: 'DM Sans', sans-serif; font-size: .8rem; font-weight: 300; opacity: .5; margin-left: .3rem; }
+.btn-prog {
+  display: block;
+  text-align: center;
+  padding: .95rem;
+  background: var(--vert);
+  color: var(--charbon);
+  font-size: .73rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  clip-path: polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+  transition: background .2s, transform .15s;
+}
+.btn-prog:hover { background: var(--vert-d); transform: scale(1.02); }
+.prog-card.feat .btn-prog { background: var(--noir); color: var(--vert); }
+.prog-card.feat .btn-prog:hover { background: rgba(255,255,255,.9); }
+
+/* ── AVIS ── */
+.avis-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+.avis-card {
+  background: var(--beige2);
+  padding: 2.5rem;
+  border-top: 2px solid rgba(107,124,63,.08);
+  transition: border-color .3s;
+  height: 100%;
+}
+.avis-card:hover { border-color: var(--vert); box-shadow: 0 4px 20px rgba(107,124,63,.15); }
+.avis-stars { color: var(--vert); font-size: .9rem; letter-spacing: .08em; margin-bottom: 1rem; }
+.avis-txt { font-size: .92rem; line-height: 1.82; color: rgba(26,26,26,.65); font-style: italic; margin-bottom: 1.5rem; }
+.avis-author { display: flex; align-items: center; gap: 1rem; }
+.avis-avatar { width: 44px; height: 44px; background: var(--noir2); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; border: 1px solid rgba(107,124,63,.12); flex-shrink: 0; }
+.avis-name { font-weight: 600; font-size: .9rem; }
+.avis-sport { font-size: .68rem; color: var(--vert); letter-spacing: .1em; text-transform: uppercase; }
+
+/* ── CAROUSEL AVIS ── */
+.avis-slide {
+  min-width: 100%;
+  padding: 0 1rem;
+}
+.avis-card-big {
+  background: #fff;
+  padding: 3.5rem;
+  border-top: 3px solid var(--vert);
+  box-shadow: 0 4px 30px rgba(26,26,26,.08);
+  max-width: 800px;
+  margin: 0 auto;
+}
+.avis-txt-big {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(26,26,26,.7);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+.carousel-btn {
+  width: 48px; height: 48px;
+  background: #fff;
+  border: 1px solid rgba(107,124,63,.25);
+  color: var(--vert);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s;
+  clip-path: polygon(4px 0%,100% 0%,calc(100% - 4px) 100%,0% 100%);
+  font-family: 'DM Sans', sans-serif;
+}
+.carousel-btn:hover { background: var(--vert); color: #fff; border-color: var(--vert); }
+.carousel-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(107,124,63,.2);
+  cursor: pointer;
+  transition: all .3s;
+  border: none;
+  padding: 0;
+}
+.carousel-dot.active { background: var(--vert); width: 24px; border-radius: 4px; }
+
+/* ── PARTENAIRES ── */
+.partner-card {
+  background: #fff;
+  border: 1px solid rgba(107,124,63,.12);
+  padding: 2.5rem;
+  box-shadow: 0 2px 16px rgba(26,26,26,.06);
+  transition: transform .3s, box-shadow .3s;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.partner-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(107,124,63,.15); }
+.partner-logo-wrap {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(26,26,26,.07);
+}
+.partner-tag {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--vert);
+  margin-bottom: .6rem;
+}
+.partner-desc {
+  font-size: .86rem;
+  line-height: 1.72;
+  color: rgba(26,26,26,.58);
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+.partner-code-wrap {
+  background: rgba(107,124,63,.07);
+  border: 1px dashed rgba(107,124,63,.3);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.partner-code-label { font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(26,26,26,.4); margin-bottom: .3rem; }
+.partner-code { font-family: 'Anton', sans-serif; font-size: 2rem; color: var(--vert); letter-spacing: .1em; line-height: 1; }
+.partner-code-sub { font-size: .75rem; color: rgba(26,26,26,.5); margin-top: .3rem; }
+.partner-btn {
+  display: block;
+  text-align: center;
+  background: var(--vert);
+  color: #fff;
+  padding: .85rem;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  clip-path: polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+  box-shadow: 0 4px 14px rgba(107,124,63,.3);
+  transition: background .2s, transform .15s;
+}
+.partner-btn:hover { background: var(--vert-d); transform: translateY(-2px); }
+
+@media (max-width: 1100px) { #partenaires > div:last-child { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 768px) { #partenaires > div:last-child { grid-template-columns: 1fr; } }
+
+/* ── CONTACT ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  margin-top: 3.5rem;
+  align-items: start;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.form-group { margin-bottom: 1rem; }
+.form-label { display: block; font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(26,26,26,.3); font-weight: 600; margin-bottom: .45rem; }
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  background: rgba(26,26,26,.03);
+  border: 1px solid rgba(107,124,63,.1);
+  color: var(--charbon);
+  padding: .9rem 1.1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .9rem;
+  outline: none;
+  transition: border-color .2s;
+  -webkit-appearance: none;
+}
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(26,26,26,.2); }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--vert); }
+.form-select option { background: var(--noir); color: var(--charbon); }
+.form-textarea { resize: vertical; min-height: 120px; }
+.btn-submit {
+  width: 100%;
+  background: var(--vert);
+  color: var(--charbon);
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  padding: 1.05rem;
+  clip-path: polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+  cursor: pointer;
+  transition: background .2s, transform .15s;
+}
+.btn-submit:hover { background: var(--vert-d); transform: translateY(-2px); }
+
+.contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+.contact-info-card {
+  padding: 1.8rem 2rem;
+  background: var(--noir);
+  border: 1px solid rgba(107,124,63,.08);
+}
+.info-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--vert); margin-bottom: .6rem; }
+.info-body { font-size: .88rem; color: rgba(26,26,26,.6); line-height: 1.75; }
+.info-body a { color: var(--vert-d); font-weight: 600; }
+
+/* ── PROGRAMMES CLÉS EN MAIN ── */
+.prog-cle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+.prog-cle-card {
+  background: var(--noir);
+  border: 1px solid rgba(107,124,63,.07);
+  padding: 2rem;
+  position: relative;
+  transition: transform .3s, border-color .3s;
+  cursor: default;
+}
+.prog-cle-card:hover { transform: translateY(-5px); border-color: rgba(107,124,63,.22); }
+.prog-cle-zone {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--vert);
+  margin-bottom: .7rem;
+}
+.prog-cle-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: .6rem;
+  color: var(--charbon);
+}
+.prog-cle-desc {
+  font-size: .82rem;
+  line-height: 1.7;
+  color: rgba(26,26,26,.58);
+  margin-bottom: 1.4rem;
+}
+.prog-cle-options { display: flex; flex-direction: column; gap: .6rem; }
+.prog-cle-opt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .6rem .9rem;
+  background: rgba(26,26,26,.03);
+  border: 1px solid rgba(26,26,26,.06);
+  font-size: .82rem;
+  color: rgba(26,26,26,.5);
+  transition: border-color .2s;
+}
+.prog-cle-opt.feat {
+  background: rgba(107,124,63,.05);
+  border-color: rgba(107,124,63,.2);
+  color: var(--charbon);
+}
+.prog-cle-prix {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.2rem;
+  color: var(--vert);
+  letter-spacing: .02em;
+  font-weight: 900;
+}
+
+@media (max-width: 1100px) { .prog-cle-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 768px)  { .prog-cle-grid { grid-template-columns: 1fr; } }
+
+/* ── ESPACE KINÉS ── */
+.kines-pro-wrap {
+  width: 100%;
+  background: var(--noir2);
+  padding: 7rem 5vw;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(107,124,63,.08);
+}
+.kines-pro-wrap::before {
+  content: 'KINÉS';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(6rem,16vw,14rem);
+  color: rgba(107,124,63,.025);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: .05em;
+}
+.kines-pro-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+.kpro-card {
+  background: var(--noir);
+  border: 1px solid rgba(107,124,63,.07);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+  transition: transform .3s, border-color .3s, box-shadow .3s;
+  cursor: default;
+}
+.kpro-card:hover { transform: translateY(-6px); border-color: rgba(107,124,63,.4); box-shadow: 0 12px 40px rgba(107,124,63,.18); }
+.kpro-card.featured {
+  background: linear-gradient(145deg, #1a1a00 0%, #0f0f00 100%);
+  border-color: rgba(107,124,63,.25);
+}
+.kpro-badge {
+  display: inline-block;
+  background: var(--vert);
+  color: var(--charbon);
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: .22rem .65rem;
+  margin-bottom: 1.2rem;
+}
+.kpro-icon { font-size: 2rem; margin-bottom: 1.2rem; display: block; }
+.kpro-name {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: .01em;
+  color: var(--charbon);
+  margin-bottom: .5rem;
+  line-height: 1.1;
+}
+.kpro-desc { font-size: .86rem; line-height: 1.72; color: rgba(26,26,26,.42); margin-bottom: 1.5rem; }
+.kpro-feats { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-bottom: 2rem; }
+.kpro-feats li { font-size: .82rem; color: rgba(26,26,26,.5); display: flex; align-items: center; gap: .6rem; }
+.kpro-feats li::before { content: '→'; color: var(--vert); font-weight: 700; }
+.kpro-price { font-family: 'Anton', sans-serif; font-size: 2.4rem; color: var(--vert); line-height: 1; margin-bottom: 1.5rem; }
+.kpro-price small { font-family: 'DM Sans', sans-serif; font-size: .8rem; font-weight: 300; color: rgba(26,26,26,.35); margin-left: .3rem; }
+.btn-kpro {
+  display: block;
+  text-align: center;
+  padding: .9rem;
+  background: var(--vert);
+  color: #fff;
+  border: none;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  transition: background .2s, transform .15s;
+  box-shadow: 0 4px 14px rgba(107,124,63,.3);
+}
+.btn-kpro:hover { background: var(--vert-d); transform: translateY(-2px); }
+.kpro-card.featured .btn-kpro { background: var(--vert); color: var(--charbon); border-color: var(--vert); }
+.kpro-card.featured .btn-kpro:hover { background: var(--vert-d); }
+
+@media (max-width: 1100px) { .kines-pro-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 768px) { .kines-pro-grid { grid-template-columns: 1fr; } }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--beige3);
+  padding: 2.5rem 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(107,124,63,.06);
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.footer-logo { font-family: 'Anton', sans-serif; font-size: 1.5rem; letter-spacing: .05em; }
+.footer-logo em { color: var(--vert); font-style: normal; }
+.footer-copy { font-size: .7rem; color: rgba(26,26,26,.4); letter-spacing: .1em; }
+.footer-links { display: flex; gap: 2rem; }
+.footer-links a { font-size: .7rem; color: rgba(26,26,26,.45); letter-spacing: .1em; transition: color .2s; }
+.footer-links a:hover { color: var(--vert); }
+
+/* ── SUCCESS STATE ── */
+#form-success {
+  display: none;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+#form-success .check {
+  width: 64px; height: 64px;
+  background: var(--vert);
+  color: var(--charbon);
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  clip-path: polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+}
+#form-success .ok-title { font-family: 'Anton', sans-serif; font-size: 1.8rem; letter-spacing: .02em; margin-bottom: .6rem; }
+#form-success .ok-sub { color: rgba(26,26,26,.45); font-size: .9rem; line-height: 1.7; margin-bottom: 2rem; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  #hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-right { display: none; }
+  .hero-vline { display: none; }
+  .services-grid { grid-template-columns: repeat(2,1fr); }
+  .equipe-grid   { grid-template-columns: repeat(2,1fr); }
+  .tele-grid     { grid-template-columns: 1fr; gap: 3rem; }
+  .about-strip   { grid-template-columns: 1fr; gap: 3rem; }
+  .contact-grid  { grid-template-columns: 1fr; gap: 3rem; }
+  footer { flex-direction: column; text-align: center; }
+}
+@media (max-width: 768px) {
+  .sec { padding: 5rem 1.5rem; }
+  .about-strip  { padding: 4rem 1.5rem; }
+  .tele-wrap    { padding: 5rem 1.5rem; }
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero-left { padding: 8rem 1.5rem 5rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .prog-grid     { grid-template-columns: 1fr; }
+  .avis-grid     { grid-template-columns: 1fr; }
+  .equipe-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .form-row { grid-template-columns: 1fr; }
+  footer { padding: 2rem 1.5rem; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <em>Sébastien</em> Di Martino
+    <span class="nav-sub">Réhabilitation Sportive · Prépa Physique</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#equipe">Équipe</a></li>
+    <li><a href="#programmes">Programmes</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#partenaires">Partenaires</a></li>
+    <li><a href="#kines-pro" style="color:var(--vert) !important; font-weight:800 !important; background:rgba(107,124,63,.06) !important;">⚕ Espace Kinés</a></li>
+    <li><a href="#contact" class="nav-cta">Prendre RDV</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-bigword">SPORT</div>
+  <div class="hero-vline"></div>
+
+  <div class="hero-left">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Réhabilitation Sportive · Prépa Physique
+    </div>
+
+    <h1 class="hero-title">
+      <span class="w1">RETROUVE</span>
+      <span class="w2">TON MEILLEUR</span>
+      <span class="w3">NIVEAU.</span>
+    </h1>
+
+    <p class="hero-desc">
+      Je t'accompagne pour retrouver tes performances, reprendre pleine possession de ton corps et dépasser tes objectifs — suivi à distance ou hybride.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-n">7+</div>
+        <div class="stat-l">Ans d'expérience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">3</div>
+        <div class="stat-l">Experts dans l'équipe</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n">100%</div>
+        <div class="stat-l">Dédié au sport</div>
+      </div>
+    </div>
+
+    <div class="hero-btns">
+      <a href="#contact" class="btn-y">Réserver une séance</a>
+      <a href="#programmes" class="btn-o">Voir les programmes →</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="photo-wrap">
+      <div class="photo-diamond"></div>
+      <div class="photo-corner-tl"></div>
+      <div class="photo-corner-br"></div>
+      <div class="photo-box">
+        <span class="photo-icon">📸</span>
+        <span class="photo-lbl">Photo Sébastien</span>
+      </div>
+      <div class="photo-tag">Réhabilitation & Perf</div>
+      <div class="photo-socials">
+        <span></span>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span class="scroll-txt">Scroll</span>
+  </div>
+</section>
+
+<!-- TICKER 1 -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Réhabilitation Sportive <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Téléconsultation <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Bilan Fonctionnel <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Récupération <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Performance <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Suivi à Distance <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Prépa Physique <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Réhabilitation Sportive <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Téléconsultation <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Bilan Fonctionnel <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Récupération <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Performance <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Suivi à Distance <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Prépa Physique <span class="ticker-dot"></span></span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="sec sec-dark reveal">
+  <div class="sec-tag">Ce que je propose</div>
+  <h2 class="sec-title">MES <span class="y">SERVICES</span></h2>
+
+  <div class="services-grid">
+    <div class="svc-card reveal">
+      <span class="svc-num">01</span>
+      <span class="svc-icon">🩺</span>
+      <div class="svc-name">Téléconsultation</div>
+      <div class="svc-desc">Séance complète en vidéo : bilan, diagnostic fonctionnel et conseils personnalisés. Sans engagement de suivi. Idéal si tu veux un avis expert ponctuel sur ta blessure ou ta douleur.</div>
+      <div class="svc-price">50€ / séance</div>
+      <a href="#contact" class="svc-link">Réserver <span class="arr">→</span></a>
+    </div>
+    <div class="svc-card reveal reveal-d2">
+      <span class="svc-num">02</span>
+      <span class="svc-icon">🔄</span>
+      <div class="svc-name">Réhabilitation à Distance</div>
+      <div class="svc-desc">Suivi complet post-blessure ou post-opératoire à distance. Programme évolutif, ajustements réguliers et accompagnement personnalisé. <strong style="color:var(--vert);">Inclus : visio de 20 min offerte</strong> avant de démarrer, pour faire connaissance et s'assurer que le suivi est adapté à ta situation.</div>
+      <div class="svc-price">200€ / mois</div>
+      <a href="#contact" class="svc-link">Réserver ma visio offerte <span class="arr">→</span></a>
+    </div>
+    <div class="svc-card reveal reveal-d3">
+      <span class="svc-num">03</span>
+      <span class="svc-icon">📊</span>
+      <div class="svc-name">Bilan Fonctionnel</div>
+      <div class="svc-desc">Analyse complète de ta posture, mobilité et déséquilibres musculaires. Un plan d'action ciblé pour optimiser tes performances.</div>
+      <div class="svc-price">100€</div>
+      <a href="#contact" class="svc-link">Réserver <span class="arr">→</span></a>
+    </div>
+    <div class="svc-card reveal reveal-d2">
+      <span class="svc-num">04</span>
+      <span class="svc-icon">🏟️</span>
+      <div class="svc-name">Club / Équipe</div>
+      <div class="svc-desc">Prise en charge collective pour associations et clubs sportifs. Programme adapté et suivi individualisé de chaque athlète.</div>
+      <div class="svc-price">Sur devis</div>
+      <a href="#contact" class="svc-link">Nous contacter <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER 2 -->
+<div class="ticker yellow-bg">
+  <div class="ticker-track">
+    <span class="ticker-item">Réhabilitation Sportive <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Téléconsultation <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Bilan Fonctionnel <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Récupération <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Performance <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Suivi à Distance <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Prépa Physique <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Réhabilitation Sportive <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Téléconsultation <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Bilan Fonctionnel <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Récupération <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Performance <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Suivi à Distance <span class="ticker-dot"></span></span>
+    <span class="ticker-item">Prépa Physique <span class="ticker-dot"></span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="about-strip">
+  <div class="reveal" style="display:flex; flex-direction:column; gap:1.5rem;">
+    <!-- Photo de Sébastien -->
+    <div style="position:relative; width:100%; max-width:380px;">
+      <div style="position:absolute; top:-12px; left:-12px; width:40px; height:40px; border-top:3px solid rgba(255,255,255,.6); border-left:3px solid rgba(255,255,255,.6); z-index:2;"></div>
+      <div style="position:absolute; bottom:-12px; right:-12px; width:40px; height:40px; border-bottom:3px solid rgba(255,255,255,.6); border-right:3px solid rgba(255,255,255,.6); z-index:2;"></div>
+      <div style="width:100%; aspect-ratio:4/5; background:rgba(255,255,255,.15); overflow:hidden; position:relative;">
+        <img src="sebastien.jpg" alt="Sébastien Di Martino"
+          style="width:100%;height:100%;object-fit:cover;object-position:center top;"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;">
+          <span style="font-size:2.5rem;opacity:.3;">📸</span>
+          <span style="font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;opacity:.4;color:#fff;">sebastien.jpg</span>
+        </div>
+      </div>
+    </div>
+    <a href="#contact" class="about-btn">Prendre contact</a>
+  </div>
+
+  <div class="reveal reveal-d2">
+    <div class="about-title">
+      MON<br>
+      <span class="outline">PARCOURS,</span><br>
+      MA VISION
+    </div>
+    <p class="about-desc">
+      La kiné du sport, c'est pas un choix par défaut — c'est une évidence. J'ai construit mon parcours brique par brique : fac de médecine, diplôme d'infirmier à Nancy, puis l'école de kiné. Pas le chemin le plus direct, mais celui qui m'a donné une vision globale du corps que peu de kinés ont.
+      <br><br>
+      Diplômé en 2019, spécialisé sport en 2020, formé au dry needling, aujourd'hui en formation de préparateur physique. Pas pour collectionner les diplômes — pour pouvoir t'accompagner vraiment, de la blessure jusqu'au retour à la performance.
+      <br><br>
+      Ce qui me drive ? Que tu ne reviennes pas juste "à l'état d'avant". Que tu repars plus fort, plus conscient de ton corps, avec les clés pour durer. Avec Nelson et Roméo, on a construit une équipe qui partage cette même exigence. Le sérieux du soin, la passion du sport.
+    </p>
+    <div class="about-stats">
+      <div class="about-stat">
+        <div class="about-stat-n">2019</div>
+        <div class="about-stat-l">Diplôme Kinésithérapeute</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-n">2020</div>
+        <div class="about-stat-l">Spécialisation Sport</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-n">En cours</div>
+        <div class="about-stat-l">Formation Prépa Physique</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-n">7+</div>
+        <div class="about-stat-l">Ans d'expérience</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ÉQUIPE -->
+<section id="equipe" class="sec sec-black">
+  <div class="equipe-header">
+    <div class="reveal">
+      <div class="sec-tag">Notre équipe</div>
+      <h2 class="sec-title">DES EXPERTS <span class="y">À TON SERVICE</span></h2>
+    </div>
+    <div class="reveal reveal-d2">
+      <a href="#contact" class="btn-o">Choisir mon praticien →</a>
+    </div>
+  </div>
+  <div class="equipe-grid">
+
+    <div class="kine-card reveal">
+      <div class="kine-photo-wrap">
+        <div class="kine-photo" style="background:var(--noir3); padding:0; overflow:hidden;">
+          <img src="sebastien.jpg" alt="Sébastien Di Martino" style="width:100%;height:100%;object-fit:cover;object-position:center top;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;width:100%;height:100%;">
+            <span class="kine-photo-icon">👤</span>
+            <span class="kine-photo-txt">Sébastien Di Martino</span>
+          </div>
+          <div class="kine-ybar"></div>
+        </div>
+      </div>
+      <div class="kine-info">
+        <div class="kine-name">Sébastien Di Martino</div>
+        <div class="kine-spe">Fondateur · Kinésithérapeute du Sport & Préparateur Physique</div>
+        <div class="kine-tag">Réhabilitation Sportive · Préparateur Physique</div>
+        <div class="kine-bio">Kinésithérapeute du sport depuis 2019, spécialisé en réhabilitation sportive et préparateur physique. Une approche globale qui va au-delà de la blessure.</div>
+      </div>
+    </div>
+
+    <div class="kine-card reveal reveal-d2">
+      <div class="kine-photo-wrap">
+        <div class="kine-photo" style="background:var(--noir3); padding:0; overflow:hidden;">
+          <img src="nelson.jpg" alt="Nelson Tsimi" style="width:100%;height:100%;object-fit:cover;object-position:center top;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;width:100%;height:100%;">
+            <span class="kine-photo-icon">👤</span>
+            <span class="kine-photo-txt">Nelson Tsimi</span>
+          </div>
+          <div class="kine-ybar"></div>
+        </div>
+      </div>
+      <div class="kine-info">
+        <div class="kine-name">Nelson Tsimi</div>
+        <div class="kine-spe">Kinésithérapeute du Sport & Préparateur Physique</div>
+        <div class="kine-tag">Réhabilitation Sportive · Préparateur Physique</div>
+        <div class="kine-bio">Kinésithérapeute du sport et préparateur physique, Nelson apporte une double expertise précieuse : la compréhension fine de la blessure et la maîtrise de la performance physique.</div>
+      </div>
+    </div>
+
+    <div class="kine-card reveal reveal-d3">
+      <div class="kine-photo-wrap">
+        <div class="kine-photo" style="background:var(--noir3); padding:0; overflow:hidden;">
+          <img src="romeo.jpg" alt="Roméo Perazzo" style="width:100%;height:100%;object-fit:cover;object-position:center top;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;width:100%;height:100%;">
+            <span class="kine-photo-icon">👤</span>
+            <span class="kine-photo-txt">Roméo Perazzo</span>
+          </div>
+          <div class="kine-ybar"></div>
+        </div>
+      </div>
+      <div class="kine-info">
+        <div class="kine-name">Roméo Perazzo</div>
+        <div class="kine-spe">Kinésithérapeute du Sport</div>
+        <div class="kine-tag">À compléter</div>
+        <div class="kine-bio">[Dis-moi la spécialité et le parcours de Roméo, je complète sa bio !]</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TÉLÉCONSULTATION -->
+<div class="tele-wrap">
+  <div class="tele-bg-word">TÉLÉCONSULTATION</div>
+  <div class="tele-grid">
+    <div class="reveal">
+      <div class="sec-tag">Visio gratuite</div>
+      <h2 class="tele-title">
+        20 MINUTES<br>
+        <span class="y">POUR TOUT</span><br>
+        <span class="out">COMPRENDRE</span>
+      </h2>
+    </div>
+    <div class="reveal reveal-d2">
+      <p class="tele-desc">
+        Tu envisages un suivi à distance ? Avant de démarrer, on se retrouve 20 minutes en visio — <strong>offert</strong>, sans engagement. L'objectif : comprendre ta situation, ta blessure, ton sport. Et voir ensemble si le suivi est vraiment adapté pour toi. À ne pas confondre avec une téléconsultation classique (50€), qui est une séance complète sans suivi.
+      </p>
+      <div class="tele-step">
+        <div class="tele-step-n">1</div>
+        <div class="tele-step-t">Tu réserves ta visio de 20 min — offerte, sans engagement</div>
+      </div>
+      <div class="tele-step">
+        <div class="tele-step-n">2</div>
+        <div class="tele-step-t">On échange sur ta situation via Andrew</div>
+      </div>
+      <div class="tele-step">
+        <div class="tele-step-n">3</div>
+        <div class="tele-step-t">On définit ensemble si et comment on travaille</div>
+      </div>
+      <a href="#contact" class="btn-y" style="display:inline-block;margin-top:2rem;">Réserver ma visio offerte</a>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMMES -->
+<section id="programmes" class="sec sec-dark">
+  <div class="sec-tag reveal">Nos offres</div>
+  <h2 class="sec-title reveal">PROGRAMMES <span class="y">&amp; PACKS</span></h2>
+  <div class="prog-grid" style="grid-template-columns: repeat(2,1fr); max-width: 860px;">
+    <div class="prog-card reveal">
+      <div class="prog-lvl">Essentiel</div>
+      <div class="prog-name">Bilan Présentiel</div>
+      <div class="prog-desc">Un bilan complet d'1h en présentiel pour comprendre ton corps et poser les bases.</div>
+      <ul class="prog-feats">
+        <li>Bilan fonctionnel complet 1h</li>
+        <li>Analyse posture &amp; mobilité</li>
+        <li>Identification des déséquilibres</li>
+        <li>Plan d'action personnalisé</li>
+      </ul>
+      <div class="prog-price">100€ <small>/ séance</small></div>
+      <a href="#contact" class="btn-prog">Réserver</a>
+    </div>
+    <div class="prog-card feat reveal reveal-d2">
+      <div class="prog-badge">⚡ Populaire</div>
+      <div class="prog-lvl">Premium</div>
+      <div class="prog-name">Suivi à Distance</div>
+      <div class="prog-desc">L'accompagnement complet pour progresser et performer, sans engagement.</div>
+      <ul class="prog-feats">
+        <li>Bilan fonctionnel approfondi</li>
+        <li>Programme évolutif sur mesure</li>
+        <li>1 téléconsultation / mois</li>
+        <li>Support illimité par message</li>
+        <li>Ajustements hebdomadaires</li>
+      </ul>
+      <div class="prog-price">200€ <small>/ mois</small></div>
+      <a href="https://buy.stripe.com/cNi5kF1N80DFgLgeD01sQ02" target="_blank" class="btn-prog">Je veux performer</a>
+    </div>
+  </div>
+
+  <!-- PROGRAMMES CLÉS EN MAIN -->
+  <div style="margin-top: 5rem;">
+    <div class="sec-tag reveal">Sans suivi personnalisé</div>
+    <h3 class="reveal" style="font-family:'Anton',sans-serif; font-size:clamp(2rem,4vw,3.5rem); line-height:.95; letter-spacing:.01em; margin-bottom:.8rem;">PROGRAMMES <span class="y">CLÉS EN MAIN</span></h3>
+    <p class="reveal" style="font-size:.95rem; line-height:1.8; color:rgba(26,26,26,.45); max-width:560px; margin-bottom:3rem;">
+      Tu veux progresser à ton rythme, sans suivi personnalisé ? Ces programmes ont été conçus par notre équipe pour les pathologies les plus courantes. Tu achètes, tu télécharges, tu commences.
+    </p>
+
+    <div class="prog-cle-grid reveal">
+
+      <div class="prog-cle-card">
+        <div class="prog-cle-zone">🦵 Genou</div>
+        <div class="prog-cle-name">Rééducation Genou Post-Traumatique</div>
+        <div class="prog-cle-desc">Post-entorse, post-opératoire, instabilité. Programme de reprise progressive semaine par semaine, adapté au retour au sport.</div>
+        <div class="prog-cle-options">
+          <div class="prog-cle-opt">
+            <span>Programme 1 mois</span>
+            <span class="prog-cle-prix">49€</span>
+          </div>
+          <div class="prog-cle-opt feat">
+            <span>Programme 3 mois</span>
+            <span class="prog-cle-prix">90€</span>
+          </div>
+        </div>
+        <a href="https://buy.stripe.com/bJe7sNezU4TVeD87ay1sQ03" target="_blank" class="btn-prog" style="margin-top:1.5rem;">Acheter — 1 mois · 49€</a>
+        <a href="https://buy.stripe.com/cNi28tezUbijfHc8eC1sQ04" target="_blank" class="btn-prog" style="margin-top:.6rem;background:var(--charbon);color:#fff;box-shadow:0 4px 14px rgba(26,26,26,.2);">Acheter — 3 mois · 90€</a>
+      </div>
+
+      <div class="prog-cle-card">
+        <div class="prog-cle-zone">🦵 Genou</div>
+        <div class="prog-cle-name">Rééducation Genou Tendineux</div>
+        <div class="prog-cle-desc">Tendinopathies rotulienne, quadricipitale, syndrome de la bandelette ilio-tibiale. Renforcement excentrique et retour progressif à l'effort.</div>
+        <div class="prog-cle-options">
+          <div class="prog-cle-opt">
+            <span>Programme 1 mois</span>
+            <span class="prog-cle-prix">49€</span>
+          </div>
+          <div class="prog-cle-opt feat">
+            <span>Programme 3 mois</span>
+            <span class="prog-cle-prix">90€</span>
+          </div>
+        </div>
+        <a href="https://buy.stripe.com/bJe7sNezU4TVeD87ay1sQ03" target="_blank" class="btn-prog" style="margin-top:1.5rem;">Acheter — 1 mois · 49€</a>
+        <a href="https://buy.stripe.com/cNi28tezUbijfHc8eC1sQ04" target="_blank" class="btn-prog" style="margin-top:.6rem;background:var(--charbon);color:#fff;box-shadow:0 4px 14px rgba(26,26,26,.2);">Acheter — 3 mois · 90€</a>
+      </div>
+
+      <div class="prog-cle-card">
+        <div class="prog-cle-zone">🦴 Hanche</div>
+        <div class="prog-cle-name">Rééducation Hanche Tendineuse</div>
+        <div class="prog-cle-desc">Tendinopathies du psoas, des abducteurs, syndrome du piriforme. Protocole de renforcement progressif et gestion de la douleur.</div>
+        <div class="prog-cle-options">
+          <div class="prog-cle-opt">
+            <span>Programme 1 mois</span>
+            <span class="prog-cle-prix">49€</span>
+          </div>
+          <div class="prog-cle-opt feat">
+            <span>Programme 3 mois</span>
+            <span class="prog-cle-prix">90€</span>
+          </div>
+        </div>
+        <a href="https://buy.stripe.com/bJe7sNezU4TVeD87ay1sQ03" target="_blank" class="btn-prog" style="margin-top:1.5rem;">Acheter — 1 mois · 49€</a>
+        <a href="https://buy.stripe.com/cNi28tezUbijfHc8eC1sQ04" target="_blank" class="btn-prog" style="margin-top:.6rem;background:var(--charbon);color:#fff;box-shadow:0 4px 14px rgba(26,26,26,.2);">Acheter — 3 mois · 90€</a>
+      </div>
+
+      <div class="prog-cle-card">
+        <div class="prog-cle-zone">🦴 Hanche</div>
+        <div class="prog-cle-name">Rééducation Hanche — Conflit & Post-op</div>
+        <div class="prog-cle-desc">Conflit fémoroacétabulaire, post-opératoire hanche. Programme de mobilité, renforcement et retour aux activités sportives.</div>
+        <div class="prog-cle-options">
+          <div class="prog-cle-opt">
+            <span>Programme 1 mois</span>
+            <span class="prog-cle-prix">49€</span>
+          </div>
+          <div class="prog-cle-opt feat">
+            <span>Programme 3 mois</span>
+            <span class="prog-cle-prix">90€</span>
+          </div>
+        </div>
+        <a href="https://buy.stripe.com/bJe7sNezU4TVeD87ay1sQ03" target="_blank" class="btn-prog" style="margin-top:1.5rem;">Acheter — 1 mois · 49€</a>
+        <a href="https://buy.stripe.com/cNi28tezUbijfHc8eC1sQ04" target="_blank" class="btn-prog" style="margin-top:.6rem;background:var(--charbon);color:#fff;box-shadow:0 4px 14px rgba(26,26,26,.2);">Acheter — 3 mois · 90€</a>
+      </div>
+
+      <div class="prog-cle-card">
+        <div class="prog-cle-zone">💪 Épaule</div>
+        <div class="prog-cle-name">Rééducation Épaule Tendineuse</div>
+        <div class="prog-cle-desc">Tendinopathies de la coiffe des rotateurs, syndrome sous-acromial, biceps. Renforcement excentrique et stabilisation scapulaire.</div>
+        <div class="prog-cle-options">
+          <div class="prog-cle-opt">
+            <span>Programme 1 mois</span>
+            <span class="prog-cle-prix">49€</span>
+          </div>
+          <div class="prog-cle-opt feat">
+            <span>Programme 3 mois</span>
+            <span class="prog-cle-prix">90€</span>
+          </div>
+        </div>
+        <a href="https://buy.stripe.com/bJe7sNezU4TVeD87ay1sQ03" target="_blank" class="btn-prog" style="margin-top:1.5rem;">Acheter — 1 mois · 49€</a>
+        <a href="https://buy.stripe.com/cNi28tezUbijfHc8eC1sQ04" target="_blank" class="btn-prog" style="margin-top:.6rem;background:var(--charbon);color:#fff;box-shadow:0 4px 14px rgba(26,26,26,.2);">Acheter — 3 mois · 90€</a>
+      </div>
+
+      <div class="prog-cle-card">
+        <div class="prog-cle-zone">💪 Épaule</div>
+        <div class="prog-cle-name">Rééducation Épaule Instable</div>
+        <div class="prog-cle-desc">Instabilité glénohumérale, post-luxation, post-Bankart. Programme de stabilisation progressive et retour au sport sécurisé.</div>
+        <div class="prog-cle-options">
+          <div class="prog-cle-opt">
+            <span>Programme 1 mois</span>
+            <span class="prog-cle-prix">49€</span>
+          </div>
+          <div class="prog-cle-opt feat">
+            <span>Programme 3 mois</span>
+            <span class="prog-cle-prix">90€</span>
+          </div>
+        </div>
+        <a href="https://buy.stripe.com/bJe7sNezU4TVeD87ay1sQ03" target="_blank" class="btn-prog" style="margin-top:1.5rem;">Acheter — 1 mois · 49€</a>
+        <a href="https://buy.stripe.com/cNi28tezUbijfHc8eC1sQ04" target="_blank" class="btn-prog" style="margin-top:.6rem;background:var(--charbon);color:#fff;box-shadow:0 4px 14px rgba(26,26,26,.2);">Acheter — 3 mois · 90€</a>
+      </div>
+
+      <div class="prog-cle-card">
+        <div class="prog-cle-zone">🦶 Cheville</div>
+        <div class="prog-cle-name">Rééducation Cheville</div>
+        <div class="prog-cle-desc">Post-entorse, instabilité chronique, post-opératoire. Proprioception, renforcement et retour au sport progressif.</div>
+        <div class="prog-cle-options">
+          <div class="prog-cle-opt">
+            <span>Programme 1 mois</span>
+            <span class="prog-cle-prix">49€</span>
+          </div>
+          <div class="prog-cle-opt feat">
+            <span>Programme 3 mois</span>
+            <span class="prog-cle-prix">90€</span>
+          </div>
+        </div>
+        <a href="https://buy.stripe.com/bJe7sNezU4TVeD87ay1sQ03" target="_blank" class="btn-prog" style="margin-top:1.5rem;">Acheter — 1 mois · 49€</a>
+        <a href="https://buy.stripe.com/cNi28tezUbijfHc8eC1sQ04" target="_blank" class="btn-prog" style="margin-top:.6rem;background:var(--charbon);color:#fff;box-shadow:0 4px 14px rgba(26,26,26,.2);">Acheter — 3 mois · 90€</a>
+      </div>
+
+      <div class="prog-cle-card">
+        <div class="prog-cle-zone">🔙 Lombaires</div>
+        <div class="prog-cle-name">Rééducation Lombaire Mécanique</div>
+        <div class="prog-cle-desc">Lumbago, douleurs lombaires chroniques, hernies discales sans atteinte nerveuse. Renforcement du gainage et mobilité progressive.</div>
+        <div class="prog-cle-options">
+          <div class="prog-cle-opt">
+            <span>Programme 1 mois</span>
+            <span class="prog-cle-prix">49€</span>
+          </div>
+          <div class="prog-cle-opt feat">
+            <span>Programme 3 mois</span>
+            <span class="prog-cle-prix">90€</span>
+          </div>
+        </div>
+        <a href="https://buy.stripe.com/bJe7sNezU4TVeD87ay1sQ03" target="_blank" class="btn-prog" style="margin-top:1.5rem;">Acheter — 1 mois · 49€</a>
+        <a href="https://buy.stripe.com/cNi28tezUbijfHc8eC1sQ04" target="_blank" class="btn-prog" style="margin-top:.6rem;background:var(--charbon);color:#fff;box-shadow:0 4px 14px rgba(26,26,26,.2);">Acheter — 3 mois · 90€</a>
+      </div>
+
+      <div class="prog-cle-card">
+        <div class="prog-cle-zone">⚡ Lombaires</div>
+        <div class="prog-cle-name">Rééducation Lombaire Neurologique</div>
+        <div class="prog-cle-desc">Sciatique, névralgie crurale, atteinte nerveuse. Protocole adapté avec décompression nerveuse, étirements ciblés et reprise progressive.</div>
+        <div class="prog-cle-options">
+          <div class="prog-cle-opt">
+            <span>Programme 1 mois</span>
+            <span class="prog-cle-prix">49€</span>
+          </div>
+          <div class="prog-cle-opt feat">
+            <span>Programme 3 mois</span>
+            <span class="prog-cle-prix">90€</span>
+          </div>
+        </div>
+        <a href="https://buy.stripe.com/bJe7sNezU4TVeD87ay1sQ03" target="_blank" class="btn-prog" style="margin-top:1.5rem;">Acheter — 1 mois · 49€</a>
+        <a href="https://buy.stripe.com/cNi28tezUbijfHc8eC1sQ04" target="_blank" class="btn-prog" style="margin-top:.6rem;background:var(--charbon);color:#fff;box-shadow:0 4px 14px rgba(26,26,26,.2);">Acheter — 3 mois · 90€</a>
+      </div>
+
+      <div class="prog-cle-card">
+        <div class="prog-cle-zone">🏃 Bassin</div>
+        <div class="prog-cle-name">Rééducation Pubalgie</div>
+        <div class="prog-cle-desc">Pubalgie du sportif, douleurs de l'aine, atteinte des adducteurs ou du droit abdominal. Programme spécifique retour au sport progressif.</div>
+        <div class="prog-cle-options">
+          <div class="prog-cle-opt">
+            <span>Programme 1 mois</span>
+            <span class="prog-cle-prix">49€</span>
+          </div>
+          <div class="prog-cle-opt feat">
+            <span>Programme 3 mois</span>
+            <span class="prog-cle-prix">90€</span>
+          </div>
+        </div>
+        <a href="https://buy.stripe.com/bJe7sNezU4TVeD87ay1sQ03" target="_blank" class="btn-prog" style="margin-top:1.5rem;">Acheter — 1 mois · 49€</a>
+        <a href="https://buy.stripe.com/cNi28tezUbijfHc8eC1sQ04" target="_blank" class="btn-prog" style="margin-top:.6rem;background:var(--charbon);color:#fff;box-shadow:0 4px 14px rgba(26,26,26,.2);">Acheter — 3 mois · 90€</a>
+      </div>
+
+      <div class="prog-cle-card" style="border-color:rgba(107,124,63,.25); background:linear-gradient(135deg,rgba(107,124,63,.06),rgba(107,124,63,.02)); box-shadow: 0 2px 12px rgba(107,124,63,.1);">
+        <div class="prog-cle-zone">✍️ Ta zone</div>
+        <div class="prog-cle-name">Tu ne trouves pas ta pathologie ?</div>
+        <div class="prog-cle-desc">Dis-nous quelle zone ou pathologie t'intéresse — on te préviendra dès que le programme est disponible, ou on te propose une solution adaptée.</div>
+        <div style="margin-top:1rem;">
+          <input type="text" id="zone-input" placeholder="Ex : coiffe des rotateurs, tendinite achille, poignet..." 
+            style="width:100%;background:#fff;border:1px solid rgba(107,124,63,.3);color:#1A1A1A;padding:.8rem 1rem;font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none;margin-bottom:.8rem;transition:border-color .2s;"
+            onfocus="this.style.borderColor='#6B7C3F'" onblur="this.style.borderColor='rgba(107,124,63,.3)'">
+          <button onclick="sendSuggestion()" 
+            style="width:100%;background:#6B7C3F;color:#fff;border:none;padding:.9rem;font-family:'DM Sans',sans-serif;font-size:.73rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);box-shadow:0 4px 14px rgba(107,124,63,.35);transition:background .2s;">
+            Envoyer ma suggestion →
+          </button>
+          <div id="zone-confirm" style="display:none;margin-top:.8rem;padding:.7rem 1rem;background:rgba(107,124,63,.1);border-left:3px solid #6B7C3F;font-size:.82rem;color:#556430;font-weight:500;">
+            ✓ Suggestion envoyée ! On revient vers toi rapidement.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section id="avis" class="sec sec-black">
+  <div class="sec-tag reveal">Ils témoignent</div>
+  <h2 class="sec-title reveal">CE QU'ILS <span class="y">DISENT</span></h2>
+
+  <div class="reveal" style="position:relative;margin-top:3.5rem;">
+    <div id="carousel" style="overflow:hidden;">
+      <div id="carousel-track" style="display:flex;transition:transform .6s cubic-bezier(.22,1,.36,1);">
+
+        <div class="avis-slide"><div class="avis-card-big">
+          <div class="avis-stars">★★★★★</div>
+          <p class="avis-txt-big">« Suite à ma rupture du tendon d'Achille, j'ai suivi la programmation à distance et j'ai été bluffé par la précision du suivi. Tout était clair, progressif, adapté à mes sensations. Même à distance, je me suis senti accompagné du début à la fin. Aujourd'hui j'ai repris l'activité avec confiance et sans appréhension. »</p>
+          <div class="avis-author"><div class="avis-avatar">🏃</div><div><div class="avis-name">Sonny R.</div><div class="avis-sport">Rupture tendon d'Achille</div></div></div>
+        </div></div>
+
+        <div class="avis-slide"><div class="avis-card-big">
+          <div class="avis-stars">★★★★★</div>
+          <p class="avis-txt-big">« Je viens de terminer un running de 50 minutes avec montée et descente, le genou va nickel. Je tenais à te remercier pour ces deux mois de suivi à distance. Ça m'a permis de rester en forme et surtout de m'occuper de mon genou. Dommage que tu sois si loin ! »</p>
+          <div class="avis-author"><div class="avis-avatar">🦵</div><div><div class="avis-name">Solène</div><div class="avis-sport">Fissure du genou · Suivi à distance</div></div></div>
+        </div></div>
+
+        <div class="avis-slide"><div class="avis-card-big">
+          <div class="avis-stars">★★★★★</div>
+          <p class="avis-txt-big">« Après une dizaine de jours, les choses évoluent clairement dans le bon sens. Les douleurs à l'épaule et au coude diminuent, je me sens plus à l'aise dans les gestes et beaucoup moins limité au quotidien. Très bonnes sensations pour la suite, la prog est top. »</p>
+          <div class="avis-author"><div class="avis-avatar">💪</div><div><div class="avis-name">Pier-Jean B.</div><div class="avis-sport">Douleurs épaule & coude</div></div></div>
+        </div></div>
+
+        <div class="avis-slide"><div class="avis-card-big">
+          <div class="avis-stars">★★★★★</div>
+          <p class="avis-txt-big">« Même si la prog n'est pas encore terminée, les sensations sont vraiment bonnes. La douleur à l'épaule a nettement diminué après environ deux semaines, avec plus de confort dans les mouvements et moins de gêne au quotidien. Merci beaucoup. »</p>
+          <div class="avis-author"><div class="avis-avatar">🏋️</div><div><div class="avis-name">Thibaut A.</div><div class="avis-sport">Douleurs épaule</div></div></div>
+        </div></div>
+
+        <div class="avis-slide"><div class="avis-card-big">
+          <div class="avis-stars">★★★★★</div>
+          <p class="avis-txt-big">« La cheville est beaucoup plus stable, je n'ai plus d'appréhension et j'ai retrouvé de bonnes sensations à l'entraînement comme au boulot. La prog était claire, efficace et bien adaptée. Merci pour le suivi sérieux et la dispo, même à distance ça a fait la diff. »</p>
+          <div class="avis-author"><div class="avis-avatar">🦶</div><div><div class="avis-name">Kévin R.</div><div class="avis-sport">Instabilité cheville</div></div></div>
+        </div></div>
+
+        <div class="avis-slide"><div class="avis-card-big">
+          <div class="avis-stars">★★★★★</div>
+          <p class="avis-txt-big">« J'ai clairement senti une amélioration : beaucoup moins d'inconfort, de meilleures sensations à l'entraînement et surtout plus de confiance dans mes mouvements. La programmation était bien construite, logique et facile à appliquer. Aujourd'hui je m'entraîne plus efficacement, sans crainte. »</p>
+          <div class="avis-author"><div class="avis-avatar">⚽</div><div><div class="avis-name">Antoine P.</div><div class="avis-sport">Suivi à distance</div></div></div>
+        </div></div>
+
+        <div class="avis-slide"><div class="avis-card-big">
+          <div class="avis-stars">★★★★★</div>
+          <p class="avis-txt-big">« Box jump et squat avec quasi plus de douleur, et surtout quasiment plus aucune douleur dans la vie quotidienne depuis 3 semaines. Tes conseils ont été précieux. J'ai appris à me canaliser et à y aller par étapes. Que du positif, l'accompagnement était top. »</p>
+          <div class="avis-author"><div class="avis-avatar">🏋️</div><div><div class="avis-name">Louis-Xavier F.</div><div class="avis-sport">Haltérophile · Retour compétition</div></div></div>
+        </div></div>
+
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:2.5rem;">
+      <button onclick="prevSlide()" class="carousel-btn">←</button>
+      <div id="carousel-dots" style="display:flex;gap:.6rem;align-items:center;"></div>
+      <button onclick="nextSlide()" class="carousel-btn">→</button>
+    </div>
+  </div>
+</section>
+
+<!-- PARTENAIRES -->
+<section id="partenaires" class="sec" style="background:var(--beige2); border-top:1px solid rgba(107,124,63,.1); border-bottom:1px solid rgba(107,124,63,.1);">
+  <div class="sec-tag reveal">Ils nous font confiance</div>
+  <h2 class="sec-title reveal">NOS <span style="color:var(--vert);">PARTENAIRES</span></h2>
+  <p class="reveal" style="font-size:.95rem;line-height:1.8;color:rgba(26,26,26,.55);max-width:560px;margin-bottom:3.5rem;">
+    Des marques sélectionnées pour leur qualité et leurs valeurs — celles qu'on utilise et qu'on recommande vraiment. Profite de nos codes exclusifs.
+  </p>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+
+    <!-- FORJ -->
+    <div class="reveal partner-card">
+      <div class="partner-logo-wrap">
+        <img src="https://forjpro.fr/wp-content/uploads/2023/01/logo-forj.png" alt="Forj"
+          style="max-height:50px;object-fit:contain;"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;font-family:'Anton',sans-serif;font-size:1.6rem;letter-spacing:.05em;color:var(--charbon);">FORJ</div>
+      </div>
+      <div class="partner-tag">Récupération & Performance</div>
+      <p class="partner-desc">Matériel de récupération haut de gamme pour les sportifs et les professionnels de santé. Pressothérapie, pistolets de massage et équipements de récupération active — ce qu'on utilise et recommande au quotidien.</p>
+      <div class="partner-code-wrap">
+        <div class="partner-code-label">Code promo</div>
+        <div class="partner-code">SKS10</div>
+        <div class="partner-code-sub">−10% sur ta commande</div>
+      </div>
+      <a href="https://forjpro.fr" target="_blank" class="partner-btn">Découvrir Forj →</a>
+    </div>
+
+    <!-- NUTRIPURE -->
+    <div class="reveal reveal-d2 partner-card">
+      <div class="partner-logo-wrap">
+        <img src="https://www.nutripure.fr/media/logo/default/logo_nutripure_rvb.png" alt="Nutripure"
+          style="max-height:50px;object-fit:contain;"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;font-family:'Anton',sans-serif;font-size:1.6rem;letter-spacing:.05em;color:var(--charbon);">NUTRIPURE</div>
+      </div>
+      <div class="partner-tag">Nutrition & Compléments</div>
+      <p class="partner-desc">Compléments alimentaires premium, sans compromis sur les formulations. La référence pour les sportifs exigeants qui ne veulent pas transiger sur la qualité.</p>
+      <div class="partner-code-wrap">
+        <div class="partner-code-label">Code promo · valable 3 mois</div>
+        <div class="partner-code">SKS10</div>
+        <div class="partner-code-sub">−10% sur ta première commande</div>
+      </div>
+      <a href="https://www.nutripure.fr" target="_blank" class="partner-btn">Découvrir Nutripure →</a>
+    </div>
+
+    <!-- SVELTUS -->
+    <div class="reveal reveal-d3 partner-card">
+      <div class="partner-logo-wrap">
+        <img src="https://shop.sveltus.com/img/logo-sveltus.svg" alt="Sveltus"
+          style="max-height:50px;object-fit:contain;"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;font-family:'Anton',sans-serif;font-size:1.6rem;letter-spacing:.05em;color:var(--charbon);">SVELTUS</div>
+      </div>
+      <div class="partner-tag">Matériel & Équipement Sport</div>
+      <p class="partner-desc">Équipements de sport et de rééducation de qualité professionnelle. Tout ce qu'il faut pour s'entraîner et récupérer efficacement à domicile.</p>
+      <div class="partner-code-wrap" style="background:rgba(26,26,26,.04);border:1px dashed rgba(26,26,26,.15);">
+        <div class="partner-code-label">Partenaire officiel</div>
+        <div class="partner-code" style="font-size:1.1rem;color:var(--charbon);">Découvrez leur gamme</div>
+        <div class="partner-code-sub">Matériel recommandé par notre équipe</div>
+      </div>
+      <a href="https://shop.sveltus.com/fr/" target="_blank" class="partner-btn">Découvrir Sveltus →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec sec-dark">
+  <div class="sec-tag reveal">Prise de contact</div>
+  <h2 class="sec-title reveal">RÉSERVE <span class="y">TON CRÉNEAU</span></h2>
+  <div class="contact-grid">
+    <div class="reveal">
+      <div style="padding: 3rem; background:#fff; border:1px solid rgba(107,124,63,.15); box-shadow: 0 4px 24px rgba(26,26,26,.07); text-align:center;">
+        <div style="font-size:2.5rem; margin-bottom:1rem;">📋</div>
+        <div style="font-family:'Anton',sans-serif; font-size:1.6rem; letter-spacing:.02em; color:var(--charbon); margin-bottom:.8rem;">PRÊT À DÉMARRER ?</div>
+        <p style="font-size:.92rem; line-height:1.75; color:rgba(26,26,26,.6); margin-bottom:2rem; max-width:340px; margin-left:auto; margin-right:auto;">
+          Remplis le formulaire en 2 minutes — Sébastien te répond sous 24h pour confirmer ton créneau.
+        </p>
+        <button data-tally-open="GxLAWz" data-tally-layout="modal" data-tally-width="600" data-tally-emoji-text="👋" data-tally-emoji-animation="wave"
+          style="background:var(--vert);color:#fff;border:none;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:1.1rem 2.8rem;cursor:pointer;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);box-shadow:0 6px 20px rgba(107,124,63,.35);transition:background .2s, transform .15s;"
+          onmouseover="this.style.background='#556430';this.style.transform='translateY(-2px)'"
+          onmouseout="this.style.background='var(--vert)';this.style.transform='none'">
+          Envoyer ma demande →
+        </button>
+        <div style="margin-top:1.2rem; font-size:.75rem; color:rgba(26,26,26,.35); letter-spacing:.1em;">Réponse garantie sous 24h</div>
+      </div>
+      <script async src="https://tally.so/widgets/embed.js"></script>
+    </div>
+
+    <div class="contact-info reveal reveal-d2">
+      <div class="contact-info-card">
+        <div class="info-title">Visio gratuite 20 min</div>
+        <div class="info-body">Le premier échange pour faire connaissance et comprendre ta situation — sans engagement, sur Andrew.</div>
+      </div>
+      <div class="contact-info-card">
+        <div class="info-title">Délai de réponse</div>
+        <div class="info-body">Sous 24h en semaine.<br>Prise de RDV rapide garantie.</div>
+      </div>
+      <div class="contact-info-card">
+        <div class="info-title">Suivi à distance ou hybride</div>
+        <div class="info-body">Depuis toute la France via Andrew.<br>Accompagnement personnalisé, ajustements réguliers.</div>
+      </div>
+      <div class="contact-info-card">
+        <div class="info-title">Remboursement</div>
+        <div class="info-body">Nos prestations relèvent de la réhabilitation sportive et du coaching à distance — elles ne sont pas remboursées par la Sécurité Sociale.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPACE KINÉS -->
+<div class="kines-pro-wrap" id="kines-pro">
+  <div class="sec-tag reveal">Pour les professionnels</div>
+  <h2 class="sec-title reveal">ESPACE <span class="y">KINÉSITHÉRAPEUTES</span></h2>
+  <p class="reveal" style="font-size:1rem;line-height:1.8;color:rgba(26,26,26,.5);max-width:600px;margin-top:.5rem;">
+    Tu es kiné du sport ? Tu cherches des ressources concrètes, créées par des praticiens qui exercent vraiment sur le terrain ? Fiches, protocoles, programmes — tout ce qu'on utilise au quotidien, disponible pour toi.
+  </p>
+
+  <div class="kines-pro-grid">
+
+    <div class="kpro-card reveal">
+      <span class="kpro-icon">📋</span>
+      <div class="kpro-name">Fiches Protocoles</div>
+      <div class="kpro-desc">Des fiches de réhabilitation clés en main, par pathologie et par sport. Directement utilisables en cabinet ou en suivi à distance.</div>
+      <ul class="kpro-feats">
+        <li>Pathologies du genou, épaule, cheville</li>
+        <li>Protocoles post-opératoires</li>
+        <li>Fiches PDF téléchargeables</li>
+        <li>Mises à jour régulières</li>
+      </ul>
+      <div class="kpro-price">À venir <small>/ fiche</small></div>
+      <a href="#contact" class="btn-kpro">Être prévenu au lancement</a>
+    </div>
+
+    <div class="kpro-card reveal reveal-d2" style="background: #fff; border: 2px solid rgba(107,124,63,.25);">
+      <div class="kpro-badge" style="background:var(--vert);color:#fff;">🤝 Communauté</div>
+      <span class="kpro-icon">💬</span>
+      <div class="kpro-name">Espace d'échange entre Kinés</div>
+      <div class="kpro-desc">Un canal dédié pour échanger entre praticiens du sport — cas cliniques, protocoles, retours d'expérience, dry needling, prépa physique. Entre kinés qui exercent vraiment sur le terrain.</div>
+      <ul class="kpro-feats">
+        <li>Échanges cliniques entre pairs</li>
+        <li>Partage de cas complexes</li>
+        <li>Dry needling, prépa physique, réhab</li>
+        <li>Accès sur invitation</li>
+      </ul>
+      <div class="kpro-price" style="color:var(--vert);">Gratuit <small style="color:rgba(26,26,26,.4);">/ accès sur demande</small></div>
+      <a href="#contact" class="btn-kpro" style="margin-top:1.5rem;">Rejoindre la communauté →</a>
+    </div>
+
+    <div class="kpro-card reveal reveal-d3">
+      <span class="kpro-icon">🎓</span>
+      <div class="kpro-name">Formations & Webinaires</div>
+      <div class="kpro-desc">Des sessions en ligne pour aller plus loin sur des thématiques précises : réhabilitation à distance, dry needling, intégration de la prépa physique en cabinet.</div>
+      <ul class="kpro-feats">
+        <li>Webinaires en direct ou en replay</li>
+        <li>Échanges entre praticiens</li>
+        <li>Cas cliniques concrets</li>
+        <li>Attestation de participation</li>
+      </ul>
+      <div class="kpro-price">À venir <small>/ session</small></div>
+      <a href="#contact" class="btn-kpro">Être prévenu au lancement</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><em>Sébastien</em> Di Martino</div>
+  <div class="footer-copy">© 2025 · Tous droits réservés</div>
+  <div class="footer-links">
+    <a href="#">Mentions légales</a>
+    <a href="#">Confidentialité</a>
+    <a href="#">Instagram</a>
+    <a href="#">TikTok</a>
+  </div>
+</footer>
+
+<script>
+/* ── CURSOR ── */
+const dot  = document.getElementById('cur-dot');
+const ring = document.getElementById('cur-ring');
+let rx = 0, ry = 0, dx = -200, dy = -200;
+document.addEventListener('mousemove', e => { rx = e.clientX; ry = e.clientY; });
+(function animCursor() {
+  dx += (rx - dx) * 0.18;
+  dy += (ry - dy) * 0.18;
+  dot.style.left  = rx + 'px';
+  dot.style.top   = ry + 'px';
+  ring.style.left = dx + 'px';
+  ring.style.top  = dy + 'px';
+  requestAnimationFrame(animCursor);
+})();
+
+/* ── NAV SCROLL ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+/* ── SCROLL REVEAL ── */
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+reveals.forEach(r => io.observe(r));
+
+/* ── CAROUSEL ── */
+let currentSlide = 0;
+const totalSlides = 7;
+let autoTimer;
+
+function updateCarousel() {
+  const track = document.getElementById('carousel-track');
+  if (track) track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === currentSlide);
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateCarousel();
+  resetTimer();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateCarousel();
+  resetTimer();
+}
+
+function resetTimer() {
+  clearInterval(autoTimer);
+  autoTimer = setInterval(nextSlide, 4500);
+}
+
+// Init dots
+window.addEventListener('load', () => {
+  const dotsContainer = document.getElementById('carousel-dots');
+  if (dotsContainer) {
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.onclick = () => { currentSlide = i; updateCarousel(); resetTimer(); };
+      dotsContainer.appendChild(dot);
+    }
+  }
+  resetTimer();
+});
+
+/* ── ZONE SUGGESTION ── */
+function sendSuggestion() {
+  const input = document.getElementById('zone-input');
+  const confirm = document.getElementById('zone-confirm');
+  if (input.value.trim() === '') {
+    input.style.borderColor = '#c0392b';
+    input.placeholder = 'Merci d\'indiquer une zone ou pathologie';
+    return;
+  }
+  input.style.display = 'none';
+  document.querySelector('button[onclick="sendSuggestion()"]').style.display = 'none';
+  confirm.style.display = 'block';
+}
+
+/* ── FORM ── */
+function showSuccess() {
+  document.getElementById('form-area').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+function showForm(e) {
+  e.preventDefault();
+  document.getElementById('form-area').style.display = 'block';
+  document.getElementById('form-success').style.display = 'none';
+}
+</script>
+</body>
+</html>
