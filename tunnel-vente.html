@@ -1,0 +1,603 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Sébastien Di Martino — Commencer</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── DESIGN SYSTEM — copie exacte de sebkinesport.fr ── */
+:root{
+  --or:#D4A017;
+  --or-d:#B8881A;
+  --noir:#1C1C1A;
+  --gris:#3A3A38;
+  --gris-m:#6B6B63;
+  --gris-c:#F5F5F3;
+  --gris-b:#EEEDE8;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#fff;color:var(--noir);font-family:'DM Sans',sans-serif;font-weight:400;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+::selection{background:var(--or);color:#fff}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:100;
+  background:#fff;border-bottom:3px solid var(--or);
+  height:62px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 5vw;box-shadow:0 2px 12px rgba(0,0,0,.07);
+}
+.logo{display:flex;align-items:center;gap:.7rem}
+.logo-sks{font-family:'Anton',sans-serif;font-size:1.8rem;letter-spacing:.02em;color:var(--noir);line-height:1}
+.logo-sks span{color:var(--or)}
+.logo-sep{width:1px;height:28px;background:rgba(0,0,0,.1)}
+.logo-txt{display:flex;flex-direction:column}
+.logo-name{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--noir)}
+.logo-sub{font-size:.57rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:var(--gris-m)}
+.nav-back{
+  font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--gris-m);border-bottom:1px solid rgba(212,160,23,.4);padding-bottom:.15rem;
+  transition:color .2s;
+}
+.nav-back:hover{color:var(--or)}
+
+/* ── HERO SECTION ── */
+.page-hero{
+  background:var(--gris);
+  padding:3.5rem 5vw 3rem;
+  border-bottom:3px solid var(--or);
+}
+.page-hero-inner{max-width:640px}
+.sec-tag{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--or);margin-bottom:.9rem;
+}
+.sec-tag::before{content:'';width:20px;height:1.5px;background:var(--or)}
+.hero-h1{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(2rem,7vw,4rem);
+  line-height:1.02;letter-spacing:.02em;
+  color:#fff;margin-bottom:1rem;
+  text-wrap:balance;
+}
+.hero-h1 em{color:var(--or);font-style:normal}
+.hero-desc{
+  font-size:.9rem;line-height:1.82;
+  color:rgba(255,255,255,.58);
+  max-width:520px;margin-bottom:1.5rem;
+}
+.trust-row{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem}
+.trust-item{
+  display:flex;align-items:center;gap:.35rem;
+  font-size:.67rem;font-weight:500;color:rgba(255,255,255,.4);
+}
+.trust-item::before{content:'✓';color:var(--or);font-weight:700}
+
+/* ── ENTONNOIR ── */
+.funnel{
+  padding:2.5rem 5vw 4rem;
+  max-width:800px;margin:0 auto;
+  display:flex;flex-direction:column;gap:0;
+}
+
+/* Diviseur */
+.fdiv{
+  display:flex;align-items:center;gap:1rem;
+  padding:1.6rem 0 1.3rem;
+}
+.fdiv-line{flex:1;height:1px;background:rgba(0,0,0,.07)}
+.fdiv-txt{
+  font-size:.58rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gris-m);white-space:nowrap;
+}
+
+/* ── CARTE PRINCIPALE — Le Labo ── */
+.card-main{
+  background:var(--noir);
+  padding:2.2rem;
+  border-top:4px solid var(--or);
+  position:relative;overflow:hidden;
+}
+.card-main::before{
+  content:'20';position:absolute;right:-2%;bottom:-20%;
+  font-family:'Anton',sans-serif;font-size:28vw;line-height:1;
+  color:rgba(212,160,23,.04);pointer-events:none;
+}
+.badge{
+  position:absolute;top:0;right:0;
+  background:var(--or);color:#fff;
+  font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:.3rem .8rem;
+}
+.main-inner{
+  display:flex;flex-direction:column;gap:2rem;
+  position:relative;z-index:1;
+}
+@media(min-width:680px){
+  .main-inner{flex-direction:row;align-items:flex-start;gap:2.5rem}
+  .main-left{flex:1}
+  .main-right{flex-shrink:0;width:210px}
+}
+.card-tag-w{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.58rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--or);margin-bottom:.7rem;
+}
+.card-tag-w::before{content:'';width:16px;height:1.5px;background:var(--or)}
+.card-title-lg{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(2rem,5vw,2.8rem);
+  letter-spacing:.02em;text-transform:uppercase;
+  color:#fff;margin-bottom:.5rem;line-height:1.02;
+}
+.card-sub-w{font-size:.84rem;line-height:1.75;color:rgba(255,255,255,.48);margin-bottom:1.2rem}
+.card-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.card-list li{
+  display:flex;align-items:flex-start;gap:.55rem;
+  font-size:.82rem;line-height:1.6;color:rgba(255,255,255,.58);
+}
+.card-list li::before{content:'✓';color:var(--or);font-weight:700;flex-shrink:0;margin-top:.1rem}
+.price-box{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(212,160,23,.25);
+  padding:1.5rem;
+  display:flex;flex-direction:column;gap:.4rem;
+}
+.price-big{
+  font-family:'Anton',sans-serif;font-size:3.5rem;color:var(--or);line-height:1;
+}
+.price-per{font-size:.8rem;color:rgba(255,255,255,.3)}
+.price-note{font-size:.68rem;color:rgba(255,255,255,.22);margin-bottom:.8rem;font-style:italic}
+.btn-or{
+  display:flex;align-items:center;justify-content:center;gap:.8rem;
+  background:var(--or);color:#fff;
+  font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:1rem 1.3rem;border:none;cursor:pointer;width:100%;
+  transition:background .2s,transform .15s,box-shadow .2s;
+  box-shadow:0 4px 16px rgba(212,160,23,.3);
+}
+.btn-or:hover{background:var(--or-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,160,23,.4)}
+.btn-or .ic{
+  width:26px;height:26px;border-radius:50%;
+  background:rgba(0,0,0,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;flex-shrink:0;transition:transform .2s;
+}
+.btn-or:hover .ic{transform:translateX(3px)}
+.btn-stripe-note{font-size:.58rem;color:rgba(255,255,255,.2);text-align:center;margin-top:.5rem}
+
+/* ── CARTE CONSULTATION 49€ ── */
+.card-mid{
+  background:var(--gris-c);
+  border-top:3px solid var(--gris-b);
+  padding:1.8rem;
+  transition:border-top-color .2s;
+}
+.card-mid:hover{border-top-color:var(--or)}
+.mid-inner{
+  display:flex;flex-direction:column;gap:1.4rem;
+}
+@media(min-width:600px){
+  .mid-inner{flex-direction:row;align-items:center;justify-content:space-between;gap:2rem}
+  .mid-left{flex:1}
+  .mid-right{flex-shrink:0;min-width:175px}
+}
+.card-tag-b{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.56rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--or);margin-bottom:.5rem;
+}
+.card-tag-b::before{content:'';width:14px;height:1.5px;background:var(--or)}
+.card-title-md{
+  font-family:'Anton',sans-serif;font-size:1.5rem;
+  letter-spacing:.02em;text-transform:uppercase;color:var(--noir);margin-bottom:.35rem;
+}
+.card-sub-b{font-size:.82rem;line-height:1.72;color:var(--gris-m)}
+.price-mid{
+  display:flex;align-items:baseline;gap:.3rem;
+  margin-bottom:.2rem;
+}
+.price-mid-val{
+  font-family:'Anton',sans-serif;font-size:2.4rem;color:var(--or);line-height:1;
+}
+.price-mid-per{font-size:.78rem;color:var(--gris-m)}
+.price-mid-note{font-size:.67rem;color:var(--gris-m);margin-bottom:.9rem;font-style:italic}
+.btn-or-outline{
+  display:flex;align-items:center;justify-content:center;gap:.7rem;
+  background:var(--noir);color:#fff;
+  font-weight:600;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:.9rem 1.2rem;border:none;cursor:pointer;width:100%;
+  transition:background .2s,transform .15s;
+}
+.btn-or-outline:hover{background:var(--gris);transform:translateY(-1px)}
+.btn-or-outline .ic{
+  width:24px;height:24px;border-radius:50%;
+  background:var(--or);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;flex-shrink:0;transition:transform .2s;
+}
+.btn-or-outline:hover .ic{transform:translateX(3px)}
+.mid-note{font-size:.62rem;color:var(--gris-m);margin-top:.5rem;font-style:italic;text-align:center}
+
+/* ── CARTE 20 MIN GRATUITE ── */
+.card-free{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.07);
+  border-top:2px solid rgba(212,160,23,.2);
+  padding:1.5rem 1.8rem;
+}
+.free-inner{
+  display:flex;flex-direction:column;gap:1.2rem;
+}
+@media(min-width:600px){
+  .free-inner{flex-direction:row;align-items:center;justify-content:space-between;gap:2rem}
+  .free-left{flex:1}
+  .free-right{flex-shrink:0}
+}
+.card-tag-free{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.55rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gris-m);margin-bottom:.4rem;
+}
+.card-tag-free::before{content:'';width:14px;height:1px;background:var(--gris-m)}
+.card-title-free{
+  font-family:'Anton',sans-serif;font-size:1.2rem;
+  letter-spacing:.02em;text-transform:uppercase;color:var(--noir);margin-bottom:.3rem;
+}
+.card-sub-free{font-size:.8rem;line-height:1.7;color:var(--gris-m)}
+.btn-free{
+  display:flex;align-items:center;justify-content:center;gap:.7rem;
+  background:#fff;color:var(--noir);
+  font-weight:600;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:.9rem 1.4rem;border:1px solid rgba(0,0,0,.15);cursor:pointer;
+  white-space:nowrap;
+  transition:background .2s,border-color .2s,transform .15s;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.btn-free:hover{background:var(--gris-c);border-color:var(--or);transform:translateY(-1px)}
+.btn-free .ic{
+  width:24px;height:24px;border-radius:50%;
+  background:var(--or);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;flex-shrink:0;transition:transform .2s;
+}
+.btn-free:hover .ic{transform:translateX(3px)}
+.free-mention{font-size:.6rem;color:var(--gris-m);margin-top:.4rem;text-align:center}
+
+/* ── PROCESSUS ── */
+.process-sec{
+  background:var(--gris-c);
+  border-top:1px solid rgba(0,0,0,.06);
+  border-bottom:1px solid rgba(0,0,0,.06);
+  padding:3rem 5vw;
+}
+.process-inner{max-width:680px;margin:0 auto}
+.sec-tag-b{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.58rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--or);margin-bottom:.7rem;
+}
+.sec-tag-b::before{content:'';width:18px;height:1.5px;background:var(--or)}
+.sec-h2{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(1.5rem,4.5vw,2.2rem);
+  letter-spacing:.02em;color:var(--noir);margin-bottom:1.8rem;
+  text-wrap:balance;
+}
+.steps{display:flex;flex-direction:column;gap:0}
+.step{
+  display:grid;grid-template-columns:44px 1fr;gap:1rem;
+  padding:1.2rem 0;border-bottom:1px solid rgba(0,0,0,.07);
+  align-items:start;
+}
+.step:first-child{border-top:1px solid rgba(0,0,0,.07)}
+.step-n{
+  width:36px;height:36px;
+  background:var(--or);color:#fff;
+  font-family:'Anton',sans-serif;font-size:1rem;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.step-title{font-weight:600;font-size:.88rem;color:var(--noir);margin-bottom:.22rem}
+.step-desc{font-size:.81rem;line-height:1.7;color:var(--gris-m)}
+
+/* ── AVIS ── */
+.avis-sec{padding:3rem 5vw;max-width:900px;margin:0 auto}
+.avis-grid{
+  display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.5rem;
+}
+@media(min-width:600px){.avis-grid{grid-template-columns:repeat(3,1fr)}}
+.avis-card{
+  background:var(--gris-c);border-top:3px solid rgba(0,0,0,.06);
+  padding:1.6rem;
+  transition:border-top-color .25s;
+}
+.avis-card:hover{border-top-color:var(--or)}
+.avis-qm{font-family:'Anton',sans-serif;font-size:2.2rem;color:var(--or);line-height:.7;margin-bottom:.6rem}
+.avis-txt{font-size:.82rem;line-height:1.8;color:var(--gris-m);font-style:italic;margin-bottom:1rem}
+.avis-name{font-family:'Anton',sans-serif;font-size:.85rem;letter-spacing:.03em;text-transform:uppercase;color:var(--noir)}
+.avis-sport{font-size:.68rem;color:var(--gris-m);margin-top:.1rem}
+
+/* ── GARANTIE ── */
+.garantie{
+  background:var(--gris-b);
+  border-top:1px solid rgba(0,0,0,.06);
+  padding:2.5rem 5vw;
+  text-align:center;
+}
+.garantie-inner{max-width:560px;margin:0 auto}
+.garantie-icon{font-size:1.8rem;margin-bottom:.7rem}
+.garantie-title{
+  font-family:'Anton',sans-serif;font-size:1.1rem;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--noir);margin-bottom:.5rem;
+}
+.garantie-desc{font-size:.83rem;line-height:1.8;color:var(--gris-m)}
+
+/* ── CTA FINAL ── */
+.cta-final{
+  background:var(--gris);
+  padding:3.5rem 5vw;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-final::before{
+  content:'20';position:absolute;right:-2%;bottom:-15%;
+  font-family:'Anton',sans-serif;font-size:50vw;line-height:1;
+  color:rgba(212,160,23,.05);pointer-events:none;
+}
+.cta-h2{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(1.8rem,6vw,3.5rem);
+  line-height:1.02;letter-spacing:.02em;color:#fff;margin-bottom:.8rem;
+  text-wrap:balance;position:relative;z-index:1;
+}
+.cta-desc{font-size:.88rem;line-height:1.8;color:rgba(255,255,255,.42);margin-bottom:2rem;position:relative;z-index:1}
+.cta-btns{
+  display:flex;flex-direction:column;gap:.7rem;
+  max-width:380px;margin:0 auto;position:relative;z-index:1;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:#111;padding:1.8rem 5vw;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem;
+}
+.footer-logo{font-family:'Anton',sans-serif;font-size:1.2rem;color:#fff}
+.footer-logo span{color:var(--or)}
+.footer-links{display:flex;gap:1.2rem;flex-wrap:wrap}
+.footer-links a{
+  font-size:.58rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.22);transition:color .2s;
+}
+.footer-links a:hover{color:var(--or)}
+.footer-copy{font-size:.58rem;color:rgba(255,255,255,.12);letter-spacing:.04em;width:100%}
+
+@media(prefers-reduced-motion:reduce){
+  .btn-or,.btn-or-outline,.btn-free,.card-mid,.avis-card{transition:none}
+}
+</style>
+
+<!-- Tally -->
+<script async src="https://tally.so/widgets/embed.js"></script>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <div class="logo-sks">SK<span>S</span></div>
+    <div class="logo-sep"></div>
+    <div class="logo-txt">
+      <div class="logo-name">Sébastien Di Martino</div>
+      <div class="logo-sub">Réhabilitation sportive</div>
+    </div>
+  </div>
+  <a href="https://sebkinesport.fr" class="nav-back">← Retour au site</a>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="sec-tag">Commencer</div>
+    <h1 class="hero-h1">CHOISIS TON<br><em>POINT DE DÉPART</em></h1>
+    <p class="hero-desc">Prêt à démarrer ? Rejoins directement. Tu veux d'abord qu'on se parle ? Les 20 minutes sont offertes.</p>
+    <div class="trust-row">
+      <span class="trust-item">Résultats dès la 1ère séance</span>
+      <span class="trust-item">100 % à distance</span>
+      <span class="trust-item">Sans engagement</span>
+      <span class="trust-item">Via Andrew (visio)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ENTONNOIR -->
+<div class="funnel">
+
+  <!-- 1 — LE LABO -->
+  <div class="card-main">
+    <div class="badge">Le plus choisi</div>
+    <div class="main-inner">
+      <div class="main-left">
+        <div class="card-tag-w">Suivi mensuel · Sans engagement</div>
+        <h2 class="card-title-lg">Le Labo</h2>
+        <p class="card-sub-w">L'accompagnement complet. Programme sur mesure, visios hebdomadaires, accès direct — tout est inclus dès le premier mois.</p>
+        <ul class="card-list">
+          <li>Bilan fonctionnel complet à l'entrée</li>
+          <li>Programme mis à jour chaque semaine</li>
+          <li>Appels visio réguliers sur Andrew</li>
+          <li>Messagerie directe illimitée</li>
+          <li>Suivi des données & ajustements continus</li>
+        </ul>
+      </div>
+      <div class="main-right">
+        <div class="price-box">
+          <div class="price-big">200</div>
+          <div class="price-per">€ / mois</div>
+          <div class="price-note">Résiliable à tout moment</div>
+          <a href="https://buy.stripe.com/6oU5kF9fA5XZcv03Ym1sQ01" target="_blank" rel="noopener" style="display:block">
+            <button class="btn-or">Je rejoins Le Labo <div class="ic">→</div></button>
+          </a>
+          <div class="btn-stripe-note">Paiement sécurisé · Stripe</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIVISEUR 1 -->
+  <div class="fdiv">
+    <div class="fdiv-line"></div>
+    <span class="fdiv-txt">Tu veux d'abord évaluer ta situation ?</span>
+    <div class="fdiv-line"></div>
+  </div>
+
+  <!-- 2 — CONSULTATION 49€ -->
+  <div class="card-mid">
+    <div class="mid-inner">
+      <div class="mid-left">
+        <div class="card-tag-b">Consultation ponctuelle</div>
+        <h3 class="card-title-md">Consultation Conseil</h3>
+        <p class="card-sub-b">Une séance visio pour faire le point — diagnostic précis, plan d'action clair, enregistrement fourni. Déductible si tu rejoins Le Labo ensuite.</p>
+      </div>
+      <div class="mid-right">
+        <div class="price-mid">
+          <span class="price-mid-val">49</span>
+          <span class="price-mid-per">€</span>
+        </div>
+        <div class="price-mid-note">Séance unique</div>
+        <a href="https://buy.stripe.com/bJe7sNezU4TVeD87ay1sQ03" target="_blank" rel="noopener" style="display:block">
+          <button class="btn-or-outline">Réserver <div class="ic">→</div></button>
+        </a>
+        <div class="mid-note">Déductible si tu rejoins Le Labo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIVISEUR 2 -->
+  <div class="fdiv">
+    <div class="fdiv-line"></div>
+    <span class="fdiv-txt">Ou alors, on commence par se parler</span>
+    <div class="fdiv-line"></div>
+  </div>
+
+  <!-- 3 — 20 MIN GRATUITE -->
+  <div class="card-free">
+    <div class="free-inner">
+      <div class="free-left">
+        <div class="card-tag-free">Sans engagement · Gratuit</div>
+        <h3 class="card-title-free">20 minutes offertes</h3>
+        <p class="card-sub-free">On fait le point sur ta problématique et tes objectifs. Je te dis franchement si je peux t'aider — et comment.</p>
+      </div>
+      <div class="free-right">
+        <button class="btn-free"
+          data-tally-open="GxLAWz" data-tally-layout="modal" data-tally-width="600"
+          data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+          Réserver mes 20 min <div class="ic">→</div>
+        </button>
+        <div class="free-mention">100 % gratuit — aucune carte requise</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /funnel -->
+
+<!-- PROCESSUS -->
+<section class="process-sec">
+  <div class="process-inner">
+    <div class="sec-tag-b">Ce qui se passe ensuite</div>
+    <h2 class="sec-h2">APRÈS TON PAIEMENT</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div>
+          <div class="step-title">Tu reçois un questionnaire</div>
+          <div class="step-desc">Immédiatement après la confirmation de paiement, un formulaire court te demande ta situation, tes antécédents et tes objectifs.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div>
+          <div class="step-title">Je prends contact sous 24 h</div>
+          <div class="step-desc">Je lis tes réponses avant qu'on se parle. Quand on se retrouve sur Andrew, on va droit au but.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div>
+          <div class="step-title">On démarre le bilan en visio</div>
+          <div class="step-desc">Évaluation fonctionnelle, analyse de tes contraintes et de tes capacités. Tu repars avec une vision claire dès la première séance.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div>
+          <div class="step-title">Ton programme arrive dans les 48 h</div>
+          <div class="step-desc">Programme personnalisé, expliqué étape par étape. Construit pour toi — pas un PDF générique.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section class="avis-sec">
+  <div class="sec-tag-b">Ce qu'ils disent</div>
+  <h2 class="sec-h2">ILS ONT SAUTÉ LE PAS.</h2>
+  <div class="avis-grid">
+    <div class="avis-card">
+      <div class="avis-qm">"</div>
+      <p class="avis-txt">En 6 semaines j'ai retrouvé 90 % de mes capacités alors que j'avais arrêté tout sport depuis 4 mois. Le suivi est vraiment sur mesure.</p>
+      <div class="avis-name">Thomas R.</div>
+      <div class="avis-sport">Crossfiteur — genou opéré</div>
+    </div>
+    <div class="avis-card">
+      <div class="avis-qm">"</div>
+      <p class="avis-txt">Jamais imaginé qu'un suivi à distance puisse être aussi précis. Sébastien voit des choses que les kiné en cabinet n'avaient pas vus.</p>
+      <div class="avis-name">Marine L.</div>
+      <div class="avis-sport">Triathlète — surmenage musculaire</div>
+    </div>
+    <div class="avis-card">
+      <div class="avis-qm">"</div>
+      <p class="avis-txt">La consultation conseil m'a suffi pour comprendre ce qui bloquait. J'ai ensuite rejoint Le Labo — meilleure décision que j'aie prise.</p>
+      <div class="avis-name">Julien M.</div>
+      <div class="avis-sport">Rugby — reprise après blessure</div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIE -->
+<section class="garantie">
+  <div class="garantie-inner">
+    <div class="garantie-icon">🛡</div>
+    <h3 class="garantie-title">Ma garantie</h3>
+    <p class="garantie-desc">Si après notre premier échange je ne pense pas pouvoir t'aider significativement, je te rembourse intégralement. Je ne prends en charge que les situations dans lesquelles je peux avoir un vrai impact.</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <h2 class="cta-h2">PRÊT À REPRENDRE<br>LE DESSUS ?</h2>
+  <p class="cta-desc">Choisis l'option qui te correspond. Les trois mènent au même endroit.</p>
+  <div class="cta-btns">
+    <a href="https://buy.stripe.com/6oU5kF9fA5XZcv03Ym1sQ01" target="_blank" rel="noopener" style="display:block">
+      <button class="btn-or" style="width:100%">Le Labo — 200 €/mois <div class="ic">→</div></button>
+    </a>
+    <a href="https://buy.stripe.com/bJe7sNezU4TVeD87ay1sQ03" target="_blank" rel="noopener" style="display:block">
+      <button class="btn-or-outline" style="width:100%;background:rgba(255,255,255,.08);color:#fff;border:none">Consultation — 49 € <div class="ic">→</div></button>
+    </a>
+    <button class="btn-free" style="background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);border-color:rgba(255,255,255,.12);box-shadow:none"
+      data-tally-open="GxLAWz" data-tally-layout="modal" data-tally-width="600"
+      data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+      20 min offertes — gratuit <div class="ic" style="background:var(--or)">→</div>
+    </button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">SK<span>S</span></div>
+  <nav class="footer-links">
+    <a href="https://sebkinesport.fr">Site principal</a>
+    <a href="https://sebkinesport.fr#questions">FAQ</a>
+    <a href="https://sebkinesport.fr#avis">Avis</a>
+  </nav>
+  <div class="footer-copy">© 2026 Sébastien Di Martino — Réhabilitation sportive à distance</div>
+</footer>
+
+</body></html>
