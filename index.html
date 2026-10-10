@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sébastien Di Martino — Réhabilitation Sportive à Distance</title>
+<meta name="description" content="Kiné du sport & expert en réhabilitation. Programme personnalisé, suivi à distance. 20 min offertes sans engagement.">
+<link rel="canonical" href="https://sebkinesport.fr">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#fff;color:#1C1C1A;font-family:'DM Sans',sans-serif;font-weight:400;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%;height:auto}
+::selection{background:#D4A017;color:#fff}
+
+:root{
+  --or:#D4A017;
+  --or-d:#B8881A;
+  --noir:#1C1C1A;
+  --gris:#3A3A38;
+  --gris-m:#6B6B63;
+  --gris-c:#F5F5F3;
+  --gris-b:#EEEDE8;
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  background:#fff;border-bottom:3px solid var(--or);
+  height:62px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 5vw;box-shadow:0 2px 12px rgba(0,0,0,.07);
+}
+.logo{display:flex;align-items:center;gap:.7rem}
+.logo-sks{font-family:'Anton',sans-serif;font-size:1.8rem;letter-spacing:.02em;color:var(--noir);line-height:1}
+.logo-sks span{color:var(--or)}
+.logo-sep{width:1px;height:28px;background:rgba(0,0,0,.1)}
+.logo-txt{display:flex;flex-direction:column}
+.logo-name{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--noir)}
+.logo-sub{font-size:.57rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:var(--gris-m)}
+.nav-cta{
+  background:var(--or);color:#fff;
+  font-family:'DM Sans',sans-serif;font-weight:600;
+  font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:.65rem 1.4rem;border:none;cursor:pointer;
+  white-space:nowrap;transition:background .2s;
+}
+.nav-cta:hover{background:var(--or-d)}
+.nav-burger{
+  background:none;border:1px solid rgba(0,0,0,.15);
+  padding:.35rem .5rem;cursor:pointer;
+  display:flex;flex-direction:column;gap:4px;
+}
+.nav-burger span{display:block;width:18px;height:1.5px;background:var(--noir)}
+.nav-links-d{display:none}
+@media(min-width:1024px){
+  .nav-burger{display:none}
+  .nav-links-d{
+    display:flex;align-items:center;gap:0;list-style:none;height:62px;
+  }
+  .nav-links-d li{height:100%;display:flex;align-items:center}
+  .nav-links-d a{
+    font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    color:rgba(28,28,26,.45);height:100%;display:flex;align-items:center;
+    padding:0 1rem;border-right:1px solid rgba(0,0,0,.06);
+    position:relative;transition:color .2s;
+  }
+  .nav-links-d a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--or);transform:scaleX(0);transition:transform .2s}
+  .nav-links-d a:hover{color:var(--noir)}
+  .nav-links-d a:hover::after{transform:scaleX(1)}
+  .nav-links-d li:first-child a{border-left:1px solid rgba(0,0,0,.06)}
+}
+
+/* MOBILE MENU */
+#mmenu{
+  display:none;position:fixed;top:62px;left:0;right:0;
+  background:#fff;z-index:499;
+  border-top:1px solid rgba(0,0,0,.06);
+  padding:1rem 5vw;flex-direction:column;gap:0;
+}
+#mmenu.open{display:flex}
+#mmenu a{
+  font-weight:600;font-size:1rem;letter-spacing:.04em;text-transform:uppercase;
+  padding:.9rem 0;border-bottom:1px solid rgba(0,0,0,.06);color:var(--noir);
+}
+
+/* HERO */
+#hero{
+  position:relative;height:100vh;min-height:580px;
+  padding-top:62px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('sebastien.jpg') center 20%/cover no-repeat;
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.08) 0%,rgba(0,0,0,.45) 45%,rgba(0,0,0,.82) 80%,rgba(0,0,0,.92) 100%);
+}
+.hero-inner{
+  position:relative;z-index:2;
+  padding:0 5vw 130px;
+  max-width:800px;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--or);margin-bottom:1rem;
+}
+.hero-tag::before{content:'';width:22px;height:1.5px;background:var(--or)}
+.hero-h1{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(3rem,12vw,7rem);
+  line-height:1;letter-spacing:.02em;
+  color:#fff;margin-bottom:1.2rem;
+}
+.hero-h1 em{color:var(--or);font-style:normal}
+.hero-desc{
+  font-size:.95rem;line-height:1.8;
+  color:rgba(255,255,255,.68);
+  max-width:460px;margin-bottom:2rem;
+}
+.hero-btns{display:flex;flex-direction:column;gap:.6rem;max-width:380px}
+.btn-or{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  background:var(--or);color:#fff;
+  font-weight:600;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:1.1rem 1.4rem;border:none;cursor:pointer;
+  transition:background .2s, transform .15s, box-shadow .2s;
+  box-shadow:0 4px 16px rgba(212,160,23,.3);
+}
+.btn-or:hover{background:var(--or-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,160,23,.4)}
+.btn-or:active{transform:translateY(0)}
+.btn-or .ic{
+  width:30px;height:30px;border-radius:50%;
+  background:rgba(0,0,0,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;flex-shrink:0;
+  transition:transform .2s;
+}
+.btn-or:hover .ic{transform:translateX(3px)}
+.btn-wh{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  background:#fff;color:var(--noir);
+  font-weight:600;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:1.1rem 1.4rem;border:none;cursor:pointer;
+  transition:background .2s, transform .15s;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+.btn-wh:hover{background:#f5f5f3;transform:translateY(-2px)}
+.btn-wh .ic{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--or);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;flex-shrink:0;
+  transition:transform .2s;
+}
+.btn-wh:hover .ic{transform:translateX(3px)}
+
+/* STATS BAND */
+.stats-band{
+  background:var(--gris);
+  padding:2.5rem 5vw;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;
+}
+@media(min-width:768px){.stats-band{grid-template-columns:repeat(4,1fr)}}
+.stat-n{
+  font-family:'Anton',sans-serif;font-size:2.8rem;color:var(--or);line-height:1;
+  transition:color .3s;
+}
+.stat-l{font-size:.75rem;font-weight:400;color:rgba(255,255,255,.45);margin-top:.3rem;letter-spacing:.04em}
+.stat-item{border-left:2px solid rgba(212,160,23,.25);padding-left:1rem}
+
+/* SECTION BASE */
+.sec{padding:3.5rem 5vw}
+@media(min-width:1024px){.sec{padding:5rem 8vw}}
+.sec-tag{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--or);margin-bottom:.9rem;
+}
+.sec-tag::before{content:'';width:20px;height:1.5px;background:var(--or)}
+.sec-h2{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(1.9rem,6vw,3.5rem);
+  line-height:1.02;letter-spacing:.02em;
+  color:var(--noir);margin-bottom:1rem;
+}
+.sec-h2-w{color:#fff}
+.sec-desc{font-size:.9rem;line-height:1.82;color:var(--gris-m);margin-bottom:2rem}
+.sec-desc-w{color:rgba(255,255,255,.52)}
+.bg-w{background:#fff}
+.bg-g{background:var(--gris-c)}
+.bg-gb{background:var(--gris-b)}
+.bg-dark{background:var(--gris)}
+.bg-noir{background:var(--noir)}
+
+/* POUR QUI — SITUATIONS */
+.situations{display:flex;flex-direction:column;gap:0;margin-top:1.5rem}
+.sit{
+  padding:2rem 0;border-bottom:1px solid rgba(0,0,0,.08);
+  position:relative;overflow:hidden;
+}
+.sit:first-child{border-top:1px solid rgba(0,0,0,.08)}
+.sit-bg-n{
+  position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+  font-family:'Anton',sans-serif;font-size:7rem;line-height:1;
+  color:rgba(0,0,0,.05);pointer-events:none;user-select:none;
+  letter-spacing:-.02em;z-index:0;
+}
+.sit-dark .sit-bg-n{color:rgba(255,255,255,.05)}
+.sit > *:not(.sit-bg-n){position:relative;z-index:1}
+.sit-n{font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--or);margin-bottom:.3rem}
+.sit-title{font-family:'Anton',sans-serif;font-size:1.25rem;letter-spacing:.02em;text-transform:uppercase;color:var(--noir);margin-bottom:.4rem}
+.sit-desc{font-size:.87rem;line-height:1.78;color:var(--gris-m);margin-bottom:.7rem;max-width:520px}
+.sit-link{
+  font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--or);display:inline-flex;align-items:center;gap:.5rem;
+  transition:gap .25s cubic-bezier(.22,1,.36,1);
+  border-bottom:1px solid rgba(212,160,23,.3);padding-bottom:.2rem;
+}
+.sit-link:hover{gap:.9rem}
+.sit-link::after{content:'→';transition:transform .25s}
+.sit-dark{background:var(--gris);margin:0 -5vw;padding:2rem 5vw;border:none}
+@media(min-width:1024px){.sit-dark{margin:0 -8vw;padding:2rem 8vw}}
+.sit-dark .sit-bg-n{color:rgba(255,255,255,.04)}
+.sit-dark .sit-n{color:var(--or)}
+.sit-dark .sit-title{color:#fff}
+.sit-dark .sit-desc{color:rgba(255,255,255,.55)}
+
+/* MON HISTOIRE */
+.story-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;margin-top:1.5rem}
+@media(min-width:900px){.story-grid{grid-template-columns:1fr 1fr;align-items:center}}
+.story-photo{aspect-ratio:3/4;background:var(--gris-b);overflow:hidden}
+.story-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.story-photo-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--gris-m);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase}
+.story-text{}
+.story-injuries{display:flex;flex-direction:column;gap:0;margin:1.5rem 0}
+.inj{padding:1rem 0;border-bottom:1px solid rgba(0,0,0,.08);display:flex;gap:.8rem;align-items:flex-start}
+.inj:first-child{border-top:1px solid rgba(0,0,0,.08)}
+.inj-year{font-family:'Anton',sans-serif;font-size:.9rem;color:var(--or);flex-shrink:0;width:40px}
+.inj-txt{font-size:.86rem;line-height:1.7;color:var(--gris-m)}
+.story-cit{
+  background:var(--gris);padding:1.5rem;
+  font-size:.9rem;line-height:1.8;color:rgba(255,255,255,.7);font-style:italic;
+  margin-top:1.5rem;
+}
+.story-cit strong{color:var(--or);font-style:normal}
+
+/* LA MÉTHODE */
+.methode-grid{display:grid;grid-template-columns:1fr;gap:0;margin-top:1.5rem}
+@media(min-width:768px){.methode-grid{grid-template-columns:1fr 1fr}}
+.m-step{
+  padding:2rem;border-bottom:1px solid rgba(255,255,255,.08);
+  border-right:none;
+}
+@media(min-width:768px){
+  .m-step{border-right:1px solid rgba(255,255,255,.08)}
+  .m-step:nth-child(even){border-right:none}
+}
+.m-n{font-family:'Anton',sans-serif;font-size:2rem;color:var(--or);line-height:1;margin-bottom:.5rem}
+.m-title{font-family:'Anton',sans-serif;font-size:1rem;letter-spacing:.03em;text-transform:uppercase;color:#fff;margin-bottom:.4rem}
+.m-desc{font-size:.84rem;line-height:1.72;color:rgba(255,255,255,.48)}
+
+/* CE QUI EST INCLUS */
+.inclus-card{background:var(--gris);padding:2.2rem;margin-top:1.5rem}
+.inclus-tag{font-size:.58rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--or);display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem}
+.inclus-tag::before{content:'';width:18px;height:1.5px;background:var(--or)}
+.inclus-price{font-family:'Anton',sans-serif;font-size:3.8rem;color:var(--or);line-height:1}
+.inclus-price span{font-size:1.5rem;color:rgba(255,255,255,.35)}
+.inclus-note{font-size:.74rem;color:rgba(255,255,255,.3);margin-bottom:1.5rem}
+.inclus-list{list-style:none;display:flex;flex-direction:column;gap:.8rem;margin-bottom:2rem}
+.inclus-list li{display:flex;gap:.7rem;font-size:.88rem;line-height:1.65;color:rgba(255,255,255,.72)}
+.inclus-list li::before{content:'✓';color:var(--or);font-weight:700;flex-shrink:0}
+.inclus-warn{font-size:.72rem;font-style:italic;color:rgba(255,255,255,.25);padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.07)}
+
+/* APRÈS TON INSCRIPTION */
+.process-steps{display:flex;flex-direction:column;gap:0;margin-top:1.5rem}
+.p-step{
+  display:grid;grid-template-columns:52px 1fr;gap:1rem;
+  padding:1.5rem 0;border-bottom:1px solid rgba(0,0,0,.08);
+  align-items:start;
+}
+.p-step:first-child{border-top:1px solid rgba(0,0,0,.08)}
+.p-n{
+  width:44px;height:44px;
+  background:var(--or);color:#fff;
+  font-family:'Anton',sans-serif;font-size:1.1rem;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.p-title{font-family:'Anton',sans-serif;font-size:.95rem;letter-spacing:.02em;text-transform:uppercase;color:var(--noir);margin-bottom:.3rem}
+.p-desc{font-size:.84rem;line-height:1.7;color:var(--gris-m)}
+
+/* AVIS — bandeau défilant infini */
+.avis-wrap{overflow:hidden;margin-top:1.5rem;position:relative;padding:0.5rem 0}
+.avis-wrap::before,.avis-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.avis-wrap::before{left:0;background:linear-gradient(to right,#F5F5F3,transparent)}
+.avis-wrap::after{right:0;background:linear-gradient(to left,#F5F5F3,transparent)}
+.avis-track{display:flex;gap:1.2rem;width:max-content;animation:avisScroll 40s linear infinite}
+.avis-track:hover{animation-play-state:paused}
+@keyframes avisScroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+.avis-card{
+  background:#fff;border-top:3px solid rgba(0,0,0,.07);
+  padding:2rem 2.2rem;width:340px;flex-shrink:0;
+  transition:border-top-color .25s,box-shadow .25s,transform .25s;
+  cursor:default;
+}
+.avis-card:hover{border-top-color:var(--or);box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-3px)}
+.avis-qm{font-family:'Anton',sans-serif;font-size:2.8rem;color:var(--or);line-height:.7;margin-bottom:.7rem}
+.avis-txt{font-size:.88rem;line-height:1.85;color:var(--gris-m);font-style:italic;margin-bottom:1.2rem}
+.avis-name{font-family:'Anton',sans-serif;font-size:.95rem;letter-spacing:.03em;text-transform:uppercase;color:var(--noir)}
+.avis-sport{font-size:.72rem;color:var(--gris-m);margin-top:.15rem}
+
+/* OU ME CONSULTER */
+.consulter-list{display:flex;flex-direction:column;gap:0}
+.consult-item{padding:1.8rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.consult-item:first-child{border-top:1px solid rgba(255,255,255,.08)}
+.consult-loc{font-size:.58rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--or);margin-bottom:.4rem}
+.consult-title{font-family:'Anton',sans-serif;font-size:1.4rem;letter-spacing:.02em;text-transform:uppercase;color:#fff;margin-bottom:.5rem}
+.consult-desc{font-size:.86rem;line-height:1.75;color:rgba(255,255,255,.52);margin-bottom:.5rem}
+.consult-price{font-size:.78rem;font-weight:500;color:rgba(255,255,255,.3)}
+@media(min-width:900px){.consulter-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.consult-item{border-right:1px solid rgba(255,255,255,.08);border-bottom:none;padding:2rem}
+.consult-item:first-child{border-top:none}
+.consult-item:last-child{border-right:none}}
+
+/* PARCOURS */
+.parcours-desc{font-size:.9rem;line-height:1.82;color:rgba(255,255,255,.52);margin-bottom:1.5rem}
+.diplomes{display:flex;flex-direction:column;gap:0}
+.dip{padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:.8rem;align-items:flex-start}
+.dip:first-child{border-top:1px solid rgba(255,255,255,.07)}
+.dip-bar{width:2px;min-height:34px;background:var(--or);flex-shrink:0;align-self:stretch}
+.dip-title{font-weight:600;font-size:.88rem;color:#fff;margin-bottom:.2rem}
+.dip-detail{font-size:.77rem;color:rgba(255,255,255,.38);line-height:1.55}
+.badge{display:inline-block;background:var(--or);color:#fff;font-size:.56rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .45rem;margin-left:.4rem;vertical-align:middle}
+
+/* ÉQUIPE */
+.equipe-list{display:flex;flex-direction:column;gap:0}
+.eq{padding:2.5rem 0;border-bottom:1px solid rgba(0,0,0,.08)}
+.eq:first-child{border-top:1px solid rgba(0,0,0,.08)}
+.eq-photo{width:100%;aspect-ratio:4/3;background:var(--gris-b);overflow:hidden;margin-bottom:1.2rem;position:relative}
+.eq-photo img{object-position:center 15%!important}
+.eq-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.eq-photo-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--gris-m);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase}
+.eq-name{font-family:'Anton',sans-serif;font-size:1.7rem;letter-spacing:.01em;text-transform:uppercase;color:var(--noir);margin-bottom:.2rem}
+.eq-role{font-size:.67rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--or);margin-bottom:.8rem}
+.eq-desc{font-size:.86rem;line-height:1.75;color:var(--gris-m);margin-bottom:1rem;max-width:560px}
+.eq-tags{display:flex;flex-wrap:wrap;gap:.3rem}
+.eq-tag{background:var(--noir);color:#fff;font-size:.6rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.25rem .6rem}
+@media(min-width:768px){
+  .eq{display:grid;grid-template-columns:240px 1fr;gap:2rem;align-items:start}
+  .eq-photo{margin-bottom:0;aspect-ratio:3/4;min-height:280px}
+}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:0;max-width:720px}
+.faq-item{border-bottom:1px solid rgba(0,0,0,.08)}
+.faq-item:first-child{border-top:1px solid rgba(0,0,0,.08)}
+.faq-btn{
+  width:100%;background:none;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.4rem 0;
+  font-weight:600;font-size:.9rem;color:var(--noir);text-align:left;gap:1rem;
+  transition:color .2s;
+}
+.faq-btn:hover{color:var(--or)}
+.faq-ico{width:22px;height:22px;flex-shrink:0;border:1.5px solid rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--or);transition:transform .3s}
+.faq-item.open .faq-ico{transform:rotate(45deg)}
+.faq-body{display:none;padding-bottom:1.4rem;font-size:.86rem;line-height:1.82;color:var(--gris-m)}
+.faq-item.open .faq-body{display:block}
+
+/* CTA BAND */
+.cta-band{background:var(--noir);padding:4rem 5vw;position:relative;overflow:hidden}
+@media(min-width:1024px){.cta-band{padding:5rem 8vw}}
+.cta-band::before{content:'20';position:absolute;right:-2%;bottom:-15%;font-family:'Anton',sans-serif;font-size:50vw;line-height:1;color:rgba(212,160,23,.05);pointer-events:none}
+.cta-h2{font-family:'Anton',sans-serif;font-size:clamp(2.2rem,9vw,5.5rem);line-height:1.02;letter-spacing:.02em;color:#fff;margin-bottom:1.2rem}
+.cta-desc{font-size:.9rem;line-height:1.8;color:rgba(255,255,255,.45);margin-bottom:2rem;max-width:460px}
+.cta-note{margin-top:1.2rem;font-size:.7rem;font-style:italic;color:rgba(255,255,255,.22)}
+
+/* PARTENAIRES */
+.partners-grid{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(0,0,0,.07);margin-top:1.5rem}
+@media(min-width:600px){.partners-grid{grid-template-columns:repeat(3,1fr)}}
+.partner{background:var(--gris-c);padding:2rem;transition:transform .25s,box-shadow .25s}
+.partner:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.1);z-index:1;position:relative}
+.partner-logo{height:52px;display:flex;align-items:center;margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(0,0,0,.08)}
+.partner-logo img{max-height:42px;max-width:140px;object-fit:contain;filter:grayscale(20%)}
+.partner-logo-txt{font-family:'Anton',sans-serif;font-size:1.6rem;letter-spacing:.04em;color:var(--noir);display:none}
+.partner-name{font-family:'Anton',sans-serif;font-size:1.4rem;letter-spacing:.02em;text-transform:uppercase;color:var(--noir);margin-bottom:.2rem}
+.partner-cat{font-size:.58rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--or);margin-bottom:.7rem}
+.partner-desc{font-size:.83rem;line-height:1.7;color:var(--gris-m);margin-bottom:1rem}
+.partner-code{background:#fff;padding:.8rem 1rem;margin-bottom:1rem;border-left:3px solid var(--or)}
+.pc-l{font-size:.56rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gris-m);margin-bottom:.2rem}
+.pc-v{font-family:'Anton',sans-serif;font-size:1.3rem;color:var(--or);letter-spacing:.05em}
+.pc-n{font-size:.67rem;color:var(--gris-m)}
+.partner-lnk{font-size:.63rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--noir);display:inline-flex;align-items:center;gap:.4rem;border-top:1px solid rgba(0,0,0,.07);padding-top:.9rem;transition:color .2s,gap .2s}
+.partner-lnk:hover{color:var(--or);gap:.7rem}
+
+/* ESPACE KINÉS */
+.kines-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+@media(min-width:600px){.kines-grid{grid-template-columns:repeat(3,1fr)}}
+.kcard{background:var(--gris-b);padding:1.8rem;border:1px solid rgba(0,0,0,.07);transition:border-color .2s}
+.kcard:hover{border-color:var(--or)}
+.kcard-n{font-family:'Anton',sans-serif;font-size:1.8rem;color:var(--or);line-height:1;margin-bottom:.6rem}
+.kcard-title{font-family:'Anton',sans-serif;font-size:.9rem;letter-spacing:.02em;text-transform:uppercase;color:var(--noir);margin-bottom:.4rem}
+.kcard-desc{font-size:.8rem;line-height:1.65;color:var(--gris-m);margin-bottom:.9rem}
+.kcard-lnk{font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--or)}
+.kines-cta{
+  background:var(--gris);padding:2rem;margin-top:1rem;
+  display:flex;flex-direction:column;gap:1rem;
+}
+@media(min-width:768px){.kines-cta{flex-direction:row;align-items:center;justify-content:space-between}}
+.kines-cta-txt strong{font-family:'Anton',sans-serif;font-size:1.1rem;letter-spacing:.02em;text-transform:uppercase;color:var(--or);display:block;margin-bottom:.3rem}
+.kines-cta-txt p{font-size:.84rem;line-height:1.72;color:rgba(255,255,255,.48)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;margin-top:1.5rem}
+@media(min-width:900px){.contact-grid{grid-template-columns:1fr 1fr}}
+.c-rows{display:flex;flex-direction:column;gap:0}
+.c-row{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:.86rem}
+.c-row:first-child{border-top:1px solid rgba(255,255,255,.07)}
+.c-label{font-size:.63rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.c-val{color:#fff}
+.tally-box{background:rgba(255,255,255,.05);padding:2.2rem;text-align:center}
+.tally-h3{font-family:'Anton',sans-serif;font-size:1.3rem;letter-spacing:.02em;text-transform:uppercase;color:#fff;margin-bottom:.5rem}
+.tally-sub{font-size:.82rem;color:rgba(255,255,255,.3);margin-bottom:1.5rem;line-height:1.7}
+
+/* POPUP STICKY */
+#popup{
+  position:fixed;bottom:0;left:0;right:0;z-index:400;
+  background:#fff;border-top:3px solid var(--or);
+  box-shadow:0 -4px 20px rgba(0,0,0,.1);
+  padding:.9rem 5vw;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  transform:translateY(100%);opacity:0;
+  transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s;
+}
+#popup.show{transform:translateY(0);opacity:1}
+.popup-tag{font-size:.55rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--or);margin-bottom:.15rem}
+.popup-title{font-family:'Anton',sans-serif;font-size:.92rem;letter-spacing:.02em;text-transform:uppercase;color:var(--noir)}
+.popup-close{background:none;border:none;cursor:pointer;font-size:.9rem;color:var(--gris-m);flex-shrink:0}
+
+/* FOOTER */
+footer{background:#111;padding:2.5rem 5vw}
+.footer-logo{font-family:'Anton',sans-serif;font-size:1.3rem;letter-spacing:.02em;color:#fff;margin-bottom:1.2rem}
+.footer-logo span{color:var(--or)}
+.footer-nav{display:flex;flex-wrap:wrap;gap:.4rem 1.3rem;margin-bottom:1.2rem}
+.footer-nav a{font-size:.6rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.25);transition:color .2s}
+.footer-nav a:hover{color:var(--or)}
+.footer-copy{font-size:.6rem;color:rgba(255,255,255,.15);letter-spacing:.05em}
+
+/* ── ANIMATIONS GLOBALES ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-l{opacity:0;transform:translateX(-28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal-l.visible{opacity:1;transform:none}
+.reveal-r{opacity:0;transform:translateX(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal-r.visible{opacity:1;transform:none}
+.reveal-scale{opacity:0;transform:scale(.94);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+
+/* Délais en cascade */
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
+
+/* Stat items animation */
+.stat-item{opacity:0;transform:translateY(20px);transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)}
+.stat-item.visible{opacity:1;transform:none}
+
+/* Process steps slide in */
+.p-step{opacity:0;transform:translateX(-20px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+.p-step.visible{opacity:1;transform:none}
+
+/* Partner cards */
+.partner{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+.partner.visible{opacity:1;transform:translateY(0)}
+.partner:hover{transform:translateY(-4px)!important}
+
+/* Situation cards */
+.sit{opacity:0;transform:translateY(16px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
+.sit.visible{opacity:1;transform:none}
+
+/* Avis card — transitions gérées dans le bloc AVIS principal */
+
+/* Hero elements */
+.hero-tag{opacity:0;transform:translateY(12px);animation:fadeUp .7s .2s cubic-bezier(.22,1,.36,1) forwards}
+.hero-h1{opacity:0;transform:translateY(16px);animation:fadeUp .8s .4s cubic-bezier(.22,1,.36,1) forwards}
+.hero-desc{opacity:0;transform:translateY(12px);animation:fadeUp .7s .65s cubic-bezier(.22,1,.36,1) forwards}
+.hero-btns{opacity:0;transform:translateY(12px);animation:fadeUp .7s .85s cubic-bezier(.22,1,.36,1) forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+/* Méthode steps */
+.m-step{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+.m-step.visible{opacity:1;transform:none}
+
+/* Diplomes */
+.dip{opacity:0;transform:translateX(-16px);transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)}
+.dip.visible{opacity:1;transform:none}
+
+/* Equipe */
+.eq{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.eq.visible{opacity:1;transform:none}
+
+/* FAQ */
+.faq-item{opacity:0;transform:translateY(10px);transition:opacity .4s cubic-bezier(.22,1,.36,1),transform .4s cubic-bezier(.22,1,.36,1)}
+.faq-item.visible{opacity:1;transform:none}
+
+/* Kines cards */
+.kcard{opacity:0;transform:translateY(18px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
+.kcard.visible{opacity:1;transform:none}
+
+/* Story injuries */
+.inj{opacity:0;transform:translateX(-14px);transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)}
+.inj.visible{opacity:1;transform:none}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <div class="logo-sks">SK<span>S</span></div>
+    <div class="logo-sep"></div>
+    <div class="logo-txt">
+      <div class="logo-name">Sébastien Di Martino</div>
+      <div class="logo-sub">Réhabilitation sportive</div>
+    </div>
+  </div>
+  <ul class="nav-links-d">
+    <li><a href="#pour-qui">Pour qui</a></li>
+    <li><a href="#methode">La méthode</a></li>
+    <li><a href="#suivi">Le suivi</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#equipe">L'équipe</a></li>
+    <li><a href="#questions">FAQ</a></li>
+    <li><a href="#kines" style="color:var(--or);font-weight:600">⚕ Kinés</a></li>
+  </ul>
+  <button class="btn-or nav-cta" data-tally-open="GxLAWz" data-tally-layout="modal" data-tally-width="600" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">20 min offertes</button>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="mmenu">
+  <a href="#pour-qui" onclick="closeMenu()">Pour qui</a>
+  <a href="#methode" onclick="closeMenu()">La méthode</a>
+  <a href="#suivi" onclick="closeMenu()">Le suivi à distance</a>
+  <a href="#avis" onclick="closeMenu()">Avis</a>
+  <a href="#equipe" onclick="closeMenu()">L'équipe</a>
+  <a href="#questions" onclick="closeMenu()">FAQ</a>
+  <a href="#kines" onclick="closeMenu()" style="color:var(--or)">⚕ Espace Kinés</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Kiné du sport & réhabilitation à distance</div>
+    <h1 class="hero-h1">RETROUVE<br>TON <em>MEILLEUR</em><br>NIVEAU.</h1>
+    <p class="hero-desc">Blessé, douloureux, ou bloqué dans ta progression — notre équipe d'experts en réhabilitation sportive t'accompagne vers un retour durable à l'activité, depuis chez toi.</p>
+    <div class="hero-btns">
+      <a href="#" data-tally-open="GxLAWz" data-tally-layout="modal" data-tally-width="600" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" class="btn-or">
+        Réserver mes 20 min offertes
+        <span class="ic">»</span>
+      </a>
+      <a href="#suivi" class="btn-wh">
+        Voir le suivi à distance
+        <span class="ic">»</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stat-item"><div class="stat-n" data-target="7" data-suffix="+">7+</div><div class="stat-l">Ans d'expérience</div></div>
+  <div class="stat-item"><div class="stat-n" data-target="3" data-suffix="">3</div><div class="stat-l">Experts dans l'équipe</div></div>
+  <div class="stat-item"><div class="stat-n" data-target="100" data-suffix="%">100%</div><div class="stat-l">Programmes sur mesure</div></div>
+  <div class="stat-item"><div class="stat-n">Nice</div><div class="stat-l">Cabinet & à distance</div></div>
+</div>
+
+<!-- POUR QUI -->
+<section id="pour-qui" class="sec bg-g">
+  <div class="sec-tag reveal">Pour qui</div>
+  <h2 class="sec-h2 reveal">TU TE RECONNAIS<br>DANS L'UNE DE CES SITUATIONS ?</h2>
+  <p class="sec-desc">Dis-nous où tu en es — les 20 minutes offertes partent de là.</p>
+  <div class="situations">
+    <div class="sit sit-dark">
+      <div class="sit-bg-n">01</div>
+      <div class="sit-n">01 — Je suis blessé</div>
+      <div class="sit-title">Sortir de la douleur</div>
+      <div class="sit-desc">Tu attends que ça passe, tu n'oses plus t'entraîner normalement, tu ne comprends pas ce qui se passe. On pose un diagnostic clair et un plan d'action concret.</div>
+      <a href="#contact" class="sit-link">Je commence ici →</a>
+    </div>
+    <div class="sit">
+      <div class="sit-bg-n">02</div>
+      <div class="sit-n">02 — Je reprends</div>
+      <div class="sit-title">Revenir sans rechuter</div>
+      <div class="sit-desc">Tu t'es blessé, tu as récupéré, mais tu as peur de te reblesser. On construit une reprise progressive avec des critères clairs avant chaque palier.</div>
+      <a href="#contact" class="sit-link">Je commence ici →</a>
+    </div>
+    <div class="sit">
+      <div class="sit-bg-n">03</div>
+      <div class="sit-n">03 — Je veux performer</div>
+      <div class="sit-title">Passer un cap</div>
+      <div class="sit-desc">Tu t'entraînes régulièrement mais tu stagnes ou tu accumules les petites douleurs. On identifie tes déficits et on construit un programme pour les corriger.</div>
+      <a href="#contact" class="sit-link">Je commence ici →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MON HISTOIRE -->
+<section id="histoire" class="sec bg-w">
+  <div class="sec-tag reveal">Pourquoi j'ai créé ce suivi</div>
+  <div class="story-grid">
+    <div class="story-photo reveal-scale">
+      <img src="sebastien.jpg" alt="Sébastien Di Martino" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="story-photo-ph">sebastien.jpg</div>
+    </div>
+    <div class="story-text">
+      <h2 class="sec-h2 reveal-l">J'AI VÉCU CE<br>QUE TU VIS.</h2>
+      <p class="sec-desc reveal d1">Avant d'être kiné du sport, j'ai été patient. Et pas qu'une fois. J'ai connu la frustration d'être blessé sans comprendre, d'être soigné sans programme clair, de rechuter parce que la reprise a été trop rapide. C'est ce qui m'a donné envie de construire quelque chose de différent.</p>
+      <div class="story-injuries">
+        <div class="inj">
+          <div class="inj-year">2017</div>
+          <div class="inj-txt"><strong>Rupture du ligament croisé.</strong> J'ai vécu la réhabilitation de l'intérieur. J'ai compris à quel point la phase de renforcement et le retour au sport étaient souvent bâclés.</div>
+        </div>
+        <div class="inj">
+          <div class="inj-year">2018</div>
+          <div class="inj-txt"><strong>Tendinopathie patellaire.</strong> Douleur chronique, plateau, découragement. J'ai appris la gestion de la charge à la dure.</div>
+        </div>
+        <div class="inj">
+          <div class="inj-year">2024</div>
+          <div class="inj-txt"><strong>8 mois d'immobilisation suite à une maladie.</strong> Perte musculaire totale, reprise de zéro. J'ai dû reconstruire mon corps méthodiquement, avec les mêmes outils que je donne à mes patients.</div>
+        </div>
+      </div>
+      <div class="story-cit reveal d2">Je ne cherche pas à faire disparaître une douleur. Je cherche à <strong>reconstruire ta capacité</strong> à faire ce que tu aimes — durablement.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LA MÉTHODE -->
+<section id="methode" class="sec bg-dark">
+  <div class="sec-tag reveal">La méthode</div>
+  <h2 class="sec-h2 sec-h2-w reveal">CAPACITÉS D'UN CÔTÉ,<br>CONTRAINTES DE L'AUTRE.</h2>
+  <p class="sec-desc sec-desc-w">Une douleur qui s'éteint ne dit rien de ce que ton corps peut encaisser le mois suivant. Mon travail : remonter ton niveau de capacité au-dessus des contraintes réelles de ton sport.</p>
+  <div class="methode-grid">
+    <div class="m-step"><div class="m-n">01</div><div><div class="m-title">Comprendre</div><div class="m-desc">Ton sport, ton historique, tes contraintes. Ce qui a déclenché, ce qui entretient.</div></div></div>
+    <div class="m-step"><div class="m-n">02</div><div><div class="m-title">Mesurer</div><div class="m-desc">Tests, analyse du mouvement, repérage des déficits. On part de chiffres, pas d'impressions.</div></div></div>
+    <div class="m-step"><div class="m-n">03</div><div><div class="m-title">Gérer la charge</div><div class="m-desc">Adapter les contraintes pendant que les capacités remontent. On module, on ne stoppe pas.</div></div></div>
+    <div class="m-step"><div class="m-n">04</div><div><div class="m-title">Reconstruire</div><div class="m-desc">Force, mobilité, endurance, confiance. Une progression planifiée jusqu'aux exigences de ton sport.</div></div></div>
+  </div>
+  <div style="margin-top:2rem;padding:1.8rem;background:rgba(0,0,0,.2);border-left:3px solid var(--or)">
+    <p style="font-size:.9rem;line-height:1.8;color:rgba(255,255,255,.65);font-style:italic"><strong style="color:var(--or);font-style:normal">Aucun programme automatisé.</strong> Chaque programme est construit à la main, à partir de notre bilan, de notre expérience et des données terrain. Ce qu'on te donne, c'est ce qu'on ferait pour nous-mêmes.</p>
+  </div>
+</section>
+
+<!-- CE QUI EST INCLUS -->
+<section id="suivi" class="sec bg-w">
+  <div class="sec-tag reveal">Le suivi à distance</div>
+  <h2 class="sec-h2 reveal">UN ACCOMPAGNEMENT<br>COMPLET, OÙ QUE TU SOIS.</h2>
+  <p class="sec-desc">Pour les sportifs qui n'ont pas accès à un expert du sport à portée, ou qui veulent un suivi structuré entre deux séances.</p>
+  <div class="inclus-card reveal">
+    <div class="inclus-tag">Suivi mensuel</div>
+    <div class="inclus-price">200€<span> / mois</span></div>
+    <div class="inclus-note">Sans engagement · Résiliable à tout moment</div>
+    <ul class="inclus-list">
+      <li>Bilan initial complet en visio (1h à 1h15) + grille de tests en vidéo</li>
+      <li>Programme personnalisé sur l'application Andrew (réhabilitation + renforcement)</li>
+      <li>Suivi régulier et ajustements selon ton évolution</li>
+      <li>Messagerie directe avec ton kiné référent via Andrew et WhatsApp</li>
+      <li>Accès aux contenus complémentaires : mobilité, gestion de la douleur</li>
+    </ul>
+    <a href="#" data-tally-open="GxLAWz" data-tally-layout="modal" data-tally-width="600" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" class="btn-or" style="max-width:380px;display:flex">
+      Réserver mes 20 min offertes
+      <span class="ic">»</span>
+    </a>
+    <div class="inclus-warn">La visio de 20 min est uniquement pour les personnes envisageant un suivi à distance. Pour un avis ponctuel sans suivi, voir la téléconsultation à 50€. Non remboursé — investissement direct dans ta santé.</div>
+  </div>
+</section>
+
+<!-- APRÈS TON INSCRIPTION -->
+<section class="sec bg-g">
+  <div class="sec-tag reveal">Comment ça se passe</div>
+  <h2 class="sec-h2 reveal">APRÈS TES 20 MIN<br>OFFERTES, VOILÀ LA SUITE.</h2>
+  <div class="process-steps">
+    <div class="p-step">
+      <div class="p-n">1</div>
+      <div>
+        <div class="p-title">Visio de 20 min — offerte</div>
+        <div class="p-desc">On fait le point sur ta situation, ta blessure, tes objectifs. On détermine ensemble si le suivi est adapté pour toi. Si ce n'est pas le cas, on te le dira honnêtement.</div>
+      </div>
+    </div>
+    <div class="p-step">
+      <div class="p-n">2</div>
+      <div>
+        <div class="p-title">Bilan complet en visio</div>
+        <div class="p-desc">1h à 1h15 de bilan approfondi. Anamnèse complète, grille de tests en vidéo, analyse du mouvement, identification de tes déficits.</div>
+      </div>
+    </div>
+    <div class="p-step">
+      <div class="p-n">3</div>
+      <div>
+        <div class="p-title">Programme sur mesure</div>
+        <div class="p-desc">Ton programme arrive sur Andrew dans les 48h. Exercices illustrés, vidéos de démonstration, progressions semaine par semaine. Réhabilitation et renforcement intégrés.</div>
+      </div>
+    </div>
+    <div class="p-step">
+      <div class="p-n">4</div>
+      <div>
+        <div class="p-title">Tu t'entraînes, on ajuste</div>
+        <div class="p-desc">Tu suis ton programme à ton rythme. Tu nous donnes tes retours via Andrew ou WhatsApp. On ajuste selon tes sensations, tes contraintes, ton évolution.</div>
+      </div>
+    </div>
+    <div class="p-step">
+      <div class="p-n">5</div>
+      <div>
+        <div class="p-title">Retour au sport</div>
+        <div class="p-desc">Quand les critères sont atteints, on définit ensemble les paliers de reprise. Pas de retour prématuré. Pas de rechute non plus.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section id="avis" class="sec bg-gb">
+  <div class="sec-tag reveal">Ce qu'en disent les patients</div>
+  <h2 class="sec-h2 reveal">ILS TÉMOIGNENT.</h2>
+  <div class="avis-wrap">
+    <div class="avis-track" id="atrack">
+      <!-- SET 1 -->
+      <div class="avis-card"><div class="avis-qm">«</div><p class="avis-txt">Suite à ma rupture du tendon d'Achille, j'ai suivi la programmation à distance et j'ai été bluffé par la précision du suivi. Tout était clair, progressif, adapté à mes sensations. Même à distance, je me suis senti accompagné du début à la fin.</p><div class="avis-name">Sonny R.</div><div class="avis-sport">Rupture tendon d'Achille</div></div>
+      <div class="avis-card"><div class="avis-qm">«</div><p class="avis-txt">Je viens de terminer un running de 50 minutes avec montée et descente, le genou va nickel. Deux mois de suivi à distance — ça m'a permis de rester en forme. Dommage que tu sois si loin !</p><div class="avis-name">Solène</div><div class="avis-sport">Fissure du genou · Suivi à distance</div></div>
+      <div class="avis-card"><div class="avis-qm">«</div><p class="avis-txt">Après une dizaine de jours, les choses évoluent clairement dans le bon sens. Les douleurs à l'épaule et au coude diminuent, je me sens plus à l'aise et beaucoup moins limité au quotidien. La prog est top.</p><div class="avis-name">Pier-Jean B.</div><div class="avis-sport">Douleurs épaule & coude</div></div>
+      <div class="avis-card"><div class="avis-qm">«</div><p class="avis-txt">La cheville est beaucoup plus stable, je n'ai plus d'appréhension à l'entraînement comme au boulot. La prog était claire, efficace et bien adaptée. Même à distance ça a fait la diff.</p><div class="avis-name">Kévin R.</div><div class="avis-sport">Instabilité cheville</div></div>
+      <div class="avis-card"><div class="avis-qm">«</div><p class="avis-txt">Box jump et squat avec quasi plus de douleur. Quasiment plus aucune douleur dans la vie quotidienne depuis 3 semaines. J'ai appris à me canaliser et à y aller par étapes. Que du positif.</p><div class="avis-name">Louis-Xavier F.</div><div class="avis-sport">Haltérophile · Retour compétition</div></div>
+      <div class="avis-card"><div class="avis-qm">«</div><p class="avis-txt">J'ai clairement senti une amélioration : moins d'inconfort, de meilleures sensations et surtout plus de confiance dans mes mouvements. La programmation était bien construite et facile à appliquer.</p><div class="avis-name">Antoine P.</div><div class="avis-sport">Suivi à distance</div></div>
+      <div class="avis-card"><div class="avis-qm">«</div><p class="avis-txt">La douleur à l'épaule a nettement diminué après deux semaines, avec plus de confort dans les mouvements. Même si la prog n'est pas encore terminée, les sensations sont vraiment bonnes.</p><div class="avis-name">Thibaut A.</div><div class="avis-sport">Douleurs épaule</div></div>
+      <!-- SET 2 (doublon pour boucle seamless) -->
+      <div class="avis-card"><div class="avis-qm">«</div><p class="avis-txt">Suite à ma rupture du tendon d'Achille, j'ai suivi la programmation à distance et j'ai été bluffé par la précision du suivi. Tout était clair, progressif, adapté à mes sensations. Même à distance, je me suis senti accompagné du début à la fin.</p><div class="avis-name">Sonny R.</div><div class="avis-sport">Rupture tendon d'Achille</div></div>
+      <div class="avis-card"><div class="avis-qm">«</div><p class="avis-txt">Je viens de terminer un running de 50 minutes avec montée et descente, le genou va nickel. Deux mois de suivi à distance — ça m'a permis de rester en forme. Dommage que tu sois si loin !</p><div class="avis-name">Solène</div><div class="avis-sport">Fissure du genou · Suivi à distance</div></div>
+      <div class="avis-card"><div class="avis-qm">«</div><p class="avis-txt">Après une dizaine de jours, les choses évoluent clairement dans le bon sens. Les douleurs à l'épaule et au coude diminuent, je me sens plus à l'aise et beaucoup moins limité au quotidien. La prog est top.</p><div class="avis-name">Pier-Jean B.</div><div class="avis-sport">Douleurs épaule & coude</div></div>
+      <div class="avis-card"><div class="avis-qm">«</div><p class="avis-txt">La cheville est beaucoup plus stable, je n'ai plus d'appréhension à l'entraînement comme au boulot. La prog était claire, efficace et bien adaptée. Même à distance ça a fait la diff.</p><div class="avis-name">Kévin R.</div><div class="avis-sport">Instabilité cheville</div></div>
+      <div class="avis-card"><div class="avis-qm">«</div><p class="avis-txt">Box jump et squat avec quasi plus de douleur. Quasiment plus aucune douleur dans la vie quotidienne depuis 3 semaines. J'ai appris à me canaliser et à y aller par étapes. Que du positif.</p><div class="avis-name">Louis-Xavier F.</div><div class="avis-sport">Haltérophile · Retour compétition</div></div>
+      <div class="avis-card"><div class="avis-qm">«</div><p class="avis-txt">J'ai clairement senti une amélioration : moins d'inconfort, de meilleures sensations et surtout plus de confiance dans mes mouvements. La programmation était bien construite et facile à appliquer.</p><div class="avis-name">Antoine P.</div><div class="avis-sport">Suivi à distance</div></div>
+      <div class="avis-card"><div class="avis-qm">«</div><p class="avis-txt">La douleur à l'épaule a nettement diminué après deux semaines, avec plus de confort dans les mouvements. Même si la prog n'est pas encore terminée, les sensations sont vraiment bonnes.</p><div class="avis-name">Thibaut A.</div><div class="avis-sport">Douleurs épaule</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OÙ ME CONSULTER -->
+<section id="consulter" class="sec bg-dark">
+  <div class="sec-tag reveal">Où me consulter</div>
+  <h2 class="sec-h2 sec-h2-w reveal">EN FACE À FACE<br>OU À DISTANCE.</h2>
+  <p class="sec-desc sec-desc-w">C'est ta situation qui décide, pas la géographie.</p>
+  <div class="consulter-list">
+    <div class="consult-item">
+      <div class="consult-loc">Au cabinet · Nice</div>
+      <div class="consult-title">En présentiel</div>
+      <div class="consult-desc">Bilan complet, tests et séances sur place. La formule la plus directe si tu es dans la région.</div>
+      <div class="consult-price">Bilan fonctionnel — 100€</div>
+    </div>
+    <div class="consult-item">
+      <div class="consult-loc">Partout · En visio</div>
+      <div class="consult-title">Suivi à distance</div>
+      <div class="consult-desc">Bilan en visio, programme sur Andrew, suivi messagerie. Idéal si tu n'es pas à Nice ou si tu veux un suivi structuré depuis chez toi.</div>
+      <div class="consult-price">200€ / mois · sans engagement</div>
+    </div>
+    <div class="consult-item">
+      <div class="consult-loc">Téléconsultation</div>
+      <div class="consult-title">Avis ponctuel</div>
+      <div class="consult-desc">Bilan approfondi, diagnostic et conseils personnalisés en une séance. Sans suivi derrière.</div>
+      <div class="consult-price">Téléconsultation — 50€</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS -->
+<section id="parcours" class="sec bg-noir">
+  <div class="sec-tag reveal">Le parcours</div>
+  <h2 class="sec-h2 sec-h2-w reveal">UN CHEMIN QUI N'A<br>PAS ÉTÉ LINÉAIRE.</h2>
+  <p class="parcours-desc">Études de médecine, diplôme d'infirmier à Nancy, puis quatre années d'école de kiné. Diplômé en 2019. Spécialisation sport en 2020. C'est ma conviction sur la réhabilitation active qui m'a poussé à créer ce suivi à distance.</p>
+  <div class="diplomes">
+    <div class="dip"><div class="dip-bar"></div><div><div class="dip-title">Diplôme d'État d'infirmier</div><div class="dip-detail">Après un premier passage par des études de médecine. Nancy.</div></div></div>
+    <div class="dip"><div class="dip-bar"></div><div><div class="dip-title">Diplôme d'État de masseur-kinésithérapeute</div><div class="dip-detail">Quatre années d'études à Nancy — 2019.</div></div></div>
+    <div class="dip"><div class="dip-bar"></div><div><div class="dip-title">Formations en kinésithérapie du sport</div><div class="dip-detail">Spécialisation 2020. Mobilité, force, douleur, épaule, dry needling. Formation continue régulière.</div></div></div>
+    <div class="dip"><div class="dip-bar"></div><div><div class="dip-title">Préparation physique <span class="badge">en cours</span></div><div class="dip-detail">Formation engagée pour prolonger la réhabilitation jusqu'à la performance.</div></div></div>
+  </div>
+</section>
+
+<!-- ÉQUIPE -->
+<section id="equipe" class="sec bg-g">
+  <div class="sec-tag reveal">L'équipe</div>
+  <h2 class="sec-h2 reveal">UN RÉFÉRENT,<br>PLUSIEURS REGARDS.</h2>
+  <p class="sec-desc">Tu as un kiné référent qui construit ton programme et assure ton suivi. Derrière lui, l'équipe échange régulièrement sur les cas et les blocages.</p>
+  <div class="equipe-list">
+    <div class="eq">
+      <div class="eq-photo">
+        <img src="sebastien.jpg" alt="Sébastien Di Martino" style="width:100%;height:100%;object-fit:cover;object-position:center top" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="eq-photo-ph">sebastien.jpg</div>
+      </div>
+      <div>
+        <div class="eq-name">Sébastien Di Martino</div>
+        <div class="eq-role">Coordination · Retour au sport</div>
+        <p class="eq-desc">Ancien infirmier devenu kiné du sport, en formation de préparateur physique. C'est ma conviction sur la réhabilitation active — et mes propres blessures — qui m'ont poussé à créer ce suivi à distance.</p>
+        <div class="eq-tags"><span class="eq-tag">Retour au sport</span><span class="eq-tag">Réathlétisation</span><span class="eq-tag">Prépa physique</span></div>
+      </div>
+    </div>
+    <div class="eq">
+      <div class="eq-photo">
+        <img src="nelson.jpg" alt="Nelson Tsimi" style="width:100%;height:100%;object-fit:cover;object-position:center top" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="eq-photo-ph">nelson.jpg</div>
+      </div>
+      <div>
+        <div class="eq-name">Nelson Tsimi</div>
+        <div class="eq-role">Haut niveau · Kiné respiratoire</div>
+        <p class="eq-desc">Ancien international de football américain, diplômé en 2022 après une licence STAPS. Il a accompagné les équipes nationales de football américain (France) et de biathlon (Belgique).</p>
+        <div class="eq-tags"><span class="eq-tag">Haut niveau</span><span class="eq-tag">Kiné respiratoire</span><span class="eq-tag">Sports collectifs</span></div>
+      </div>
+    </div>
+    <div class="eq">
+      <div class="eq-photo">
+        <img src="romeo.jpg" alt="Roméo Perazzo" style="width:100%;height:100%;object-fit:cover;object-position:center top" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="eq-photo-ph">romeo.jpg</div>
+      </div>
+      <div>
+        <div class="eq-name">Roméo Perazzo</div>
+        <div class="eq-role">Épaule · Douleur · Endurance</div>
+        <p class="eq-desc">Pratiquant de sports d'endurance, formé à la prise en charge de l'épaule du sportif et aux neurosciences de la douleur. Il intègre le mécanique comme le global.</p>
+        <div class="eq-tags"><span class="eq-tag">Épaule du sportif</span><span class="eq-tag">Douleur</span><span class="eq-tag">Endurance</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="questions" class="sec bg-w">
+  <div class="sec-tag reveal">Questions fréquentes</div>
+  <h2 class="sec-h2 reveal">AVANT DE<br>RÉSERVER.</h2>
+  <div class="faq-list" style="margin-top:1.5rem">
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Le suivi est-il remboursé ?<span class="faq-ico">+</span></button><div class="faq-body">Non. Nos prestations relèvent de la réhabilitation sportive — elles ne sont pas remboursées. C'est un investissement direct dans ta santé et ta performance, sans intermédiaire.</div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Le suivi à distance remplace-t-il des séances en cabinet ?<span class="faq-ico">+</span></button><div class="faq-body">Pour la réhabilitation musculo-squelettique et le retour au sport, oui — dans la grande majorité des cas. Si ta situation nécessite une présence physique, on te le dit dès la première visio.</div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Faut-il du matériel ou une salle de sport ?<span class="faq-ico">+</span></button><div class="faq-body">Un accès à une salle de sport ou à du matériel avec charges est fortement préférable — les adaptations neuromusculaires sont bien plus efficaces. Si tu n'as pas de salle, on s'adapte, mais c'est notre option B.</div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Comment se passe le premier échange ?<span class="faq-ico">+</span></button><div class="faq-body">20 minutes en visio via Andrew — offert, sans engagement. On fait le point sur ta situation et on détermine si notre accompagnement est adapté. Si ce n'est pas le cas, on te le dira.</div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Quelle est la durée d'un suivi ?<span class="faq-ico">+</span></button><div class="faq-body">Impossible de donner un délai précis — méfie-toi de ceux qui le font. La récupération dépend de trop de facteurs. On avance avec toi, au ressenti. On ajuste en continu.</div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Quelle différence entre la visio gratuite et la téléconsultation ?<span class="faq-ico">+</span></button><div class="faq-body">La visio de 20 min offerte est uniquement pour les personnes qui envisagent un suivi à distance — pour voir si c'est adapté. La téléconsultation à 50€ est une séance complète de bilan et de conseils, sans suivi derrière.</div></div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="sec-tag">Prendre rendez-vous</div>
+  <h2 class="cta-h2 reveal">20 MINUTES,<br>OFFERTES,<br>SANS ENGAGEMENT.</h2>
+  <p class="cta-desc reveal d1">On fait le point sur ta problématique et tes objectifs, et on voit ensemble si notre accompagnement est adapté. Si ce n'est pas le cas, on te le dira.</p>
+  <a href="#" data-tally-open="GxLAWz" data-tally-layout="modal" data-tally-width="600" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" class="btn-or" style="max-width:380px;display:flex">
+    Réserver mon échange de 20 min
+    <span class="ic">»</span>
+  </a>
+  <div class="cta-note">En cas de douleur aiguë ou d'urgence, appelez le 15.</div>
+</div>
+
+<!-- PARTENAIRES -->
+<section id="partenaires" class="sec bg-g">
+  <div class="sec-tag reveal">Partenaires</div>
+  <h2 class="sec-h2 reveal">DES MARQUES<br>QU'ON RECOMMANDE.</h2>
+  <div class="partners-grid">
+    <div class="partner">
+      <div class="partner-logo"><img src="logo-forj.png" alt="Forj" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="partner-logo-txt">FORJ</div></div>
+      <div class="partner-name">Forj</div>
+      <div class="partner-cat">Récupération & Performance</div>
+      <p class="partner-desc">Pressothérapie, pistolets de massage, équipements de récupération active. Ce qu'on utilise et recommande au quotidien.</p>
+      <div class="partner-code"><div class="pc-l">Code promo</div><div class="pc-v">SKS10</div><div class="pc-n">−10% sur ta commande</div></div>
+      <a href="https://forjpro.fr" target="_blank" class="partner-lnk">Découvrir Forj →</a>
+    </div>
+    <div class="partner">
+      <div class="partner-logo"><img src="logo-nutripure.png" alt="Nutripure" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="partner-logo-txt">NUTRIPURE</div></div>
+      <div class="partner-name">Nutripure</div>
+      <div class="partner-cat">Nutrition & Compléments</div>
+      <p class="partner-desc">Compléments alimentaires premium, sans compromis sur les formulations. La référence pour les sportifs exigeants.</p>
+      <div class="partner-code"><div class="pc-l">Code promo · valable 3 mois</div><div class="pc-v">SKS10</div><div class="pc-n">−10% sur ta première commande</div></div>
+      <a href="https://www.nutripure.fr" target="_blank" class="partner-lnk">Découvrir Nutripure →</a>
+    </div>
+    <div class="partner">
+      <div class="partner-logo"><img src="logo-sveltus.png" alt="Sveltus" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="partner-logo-txt">SVELTUS</div></div>
+      <div class="partner-name">Sveltus</div>
+      <div class="partner-cat">Matériel Sport</div>
+      <p class="partner-desc">Équipements de réhabilitation de qualité professionnelle. Tout ce qu'il faut pour s'entraîner efficacement à domicile.</p>
+      <div class="partner-code" style="background:var(--gris-b)"><div class="pc-l">Partenaire officiel</div><div class="pc-v" style="color:var(--noir);font-size:1rem">Gamme recommandée</div><div class="pc-n">Matériel sélectionné par notre équipe</div></div>
+      <a href="https://shop.sveltus.com/fr/" target="_blank" class="partner-lnk">Découvrir Sveltus →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ESPACE KINÉS -->
+<section id="kines" class="sec bg-w">
+  <div class="sec-tag reveal">Espace kinésithérapeutes</div>
+  <h2 class="sec-h2 reveal">ENTRE PRATICIENS<br>DU SPORT.</h2>
+  <div class="kines-grid">
+    <div class="kcard"><div class="kcard-n">01</div><div class="kcard-title">Fiches protocoles</div><p class="kcard-desc">Protocoles par pathologie — genou, épaule, lombaires, cheville. Directement utilisables en cabinet.</p><a href="#contact" class="kcard-lnk">Accéder →</a></div>
+    <div class="kcard"><div class="kcard-n">02</div><div class="kcard-title">Communauté kinés</div><p class="kcard-desc">Échanges cliniques, cas complexes, dry needling, prépa physique. Entre kinés du terrain.</p><a href="https://chat.whatsapp.com/FAmplSH4L5W96GCcu1WtEz?mode=gi_t" target="_blank" class="kcard-lnk">Rejoindre →</a></div>
+    <div class="kcard"><div class="kcard-n">03</div><div class="kcard-title">Formations</div><p class="kcard-desc">Webinaires sur la réhabilitation sportive, la prépa physique et la prise en charge à distance.</p><a href="#contact" class="kcard-lnk">S'inscrire →</a></div>
+  </div>
+  <div class="kines-cta">
+    <div class="kines-cta-txt"><strong>Rejoins la communauté kinés</strong><p>Échanges cliniques, protocoles, dry needling. Groupe WhatsApp privé, accès gratuit sur demande.</p></div>
+    <a href="https://chat.whatsapp.com/FAmplSH4L5W96GCcu1WtEz?mode=gi_t" target="_blank" class="btn-or" style="white-space:nowrap;flex-shrink:0;display:flex;max-width:220px">Rejoindre <span class="ic">»</span></a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec bg-dark">
+  <div class="sec-tag reveal">Prendre rendez-vous</div>
+  <h2 class="sec-h2 reveal">COMMENÇONS PAR<br>EN PARLER.</h2>
+  <p class="sec-desc sec-desc-w">Le premier échange de 20 minutes est offert et sans engagement. Il sert à comprendre ta situation et à voir si on peut t'être utile.</p>
+  <div class="contact-grid">
+    <div>
+      <div class="c-rows">
+        <div class="c-row"><span class="c-label">E-mail</span><a href="mailto:sebastiendimartino6@gmail.com" class="c-val">sebastiendimartino6@gmail.com</a></div>
+        <div class="c-row"><span class="c-label">Instagram</span><a href="https://instagram.com/sebkinesport_" target="_blank" class="c-val">@sebkinesport_</a></div>
+        <div class="c-row"><span class="c-label">TikTok</span><a href="https://tiktok.com/@sebkinesport" target="_blank" class="c-val">@sebkinesport</a></div>
+        <div class="c-row"><span class="c-label">Cabinet</span><span class="c-val" style="color:rgba(255,255,255,.35)">Nice, France</span></div>
+      </div>
+    </div>
+    <div class="tally-box">
+      <div class="tally-h3">Réserver mon créneau</div>
+      <p class="tally-sub">Remplis le formulaire — on te répond sous 24h.</p>
+      <button data-tally-open="GxLAWz" data-tally-layout="modal" data-tally-width="600" data-tally-emoji-text="👋" data-tally-emoji-animation="wave"
+        class="btn-or" style="margin:0 auto;max-width:320px;display:flex;cursor:pointer;border:none">
+        Réserver mes 20 min offertes <span class="ic">»</span>
+      </button>
+      <p style="margin-top:.8rem;font-size:.67rem;color:rgba(255,255,255,.2);font-style:italic">Sans engagement · Réponse sous 24h</p>
+    </div>
+  </div>
+  <script async src="https://tally.so/widgets/embed.js"></script>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">SK<span>S</span></div>
+  <div class="footer-nav">
+    <a href="#pour-qui">Pour qui</a>
+    <a href="#histoire">Mon histoire</a>
+    <a href="#methode">La méthode</a>
+    <a href="#suivi">Suivi à distance</a>
+    <a href="#avis">Avis</a>
+    <a href="#equipe">L'équipe</a>
+    <a href="#questions">FAQ</a>
+    <a href="#partenaires">Partenaires</a>
+    <a href="#kines">Espace Kinés</a>
+  </div>
+  <div class="footer-copy">© 2025 Sébastien Di Martino · sebkinesport.fr</div>
+</footer>
+
+<!-- POPUP -->
+<div id="popup">
+  <div><div class="popup-tag">Premier contact</div><div class="popup-title">20 minutes offertes</div></div>
+  <button data-tally-open="GxLAWz" data-tally-layout="modal" data-tally-width="600" data-tally-emoji-text="👋" data-tally-emoji-animation="wave"
+    class="btn-or" style="cursor:pointer;border:none;white-space:nowrap;padding:.65rem 1.1rem;font-size:.65rem;flex-shrink:0">
+    Réserver → <span class="ic" style="width:22px;height:22px;font-size:.7rem">»</span>
+  </button>
+  <button class="popup-close" onclick="document.getElementById('popup').style.display='none'">✕</button>
+</div>
+
+<script>
+function toggleMenu(){document.getElementById('mmenu').classList.toggle('open')}
+function closeMenu(){document.getElementById('mmenu').classList.remove('open')}
+
+// SCROLL REVEAL
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.12});
+
+// Stagger children of certain containers
+function staggerChildren(selector, childSelector, delay=120){
+  document.querySelectorAll(selector).forEach(parent => {
+    parent.querySelectorAll(childSelector).forEach((child, i) => {
+      child.style.transitionDelay = (i * delay) + 'ms';
+      revealObs.observe(child);
+    });
+  });
+}
+
+// Observe all reveal elements
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-scale').forEach(el => revealObs.observe(el));
+
+// Stagger specific groups
+staggerChildren('.stats-band', '.stat-item', 150);
+staggerChildren('.situations', '.sit', 100);
+staggerChildren('.methode-grid', '.m-step', 120);
+staggerChildren('.process-steps', '.p-step', 130);
+staggerChildren('.partners-grid', '.partner', 110);
+staggerChildren('.equipe-list', '.eq', 150);
+staggerChildren('.kines-grid', '.kcard', 100);
+staggerChildren('.faq-list', '.faq-item', 80);
+staggerChildren('.diplomes', '.dip', 100);
+staggerChildren('.story-injuries', '.inj', 120);
+
+// ANIMATED COUNTERS
+function animateCounter(el){
+  const target=parseInt(el.dataset.target);
+  const suffix=el.dataset.suffix||'';
+  if(isNaN(target))return;
+  let start=0;
+  const duration=1600;
+  const step=16;
+  const increment=target/(duration/step);
+  const timer=setInterval(()=>{
+    start+=increment;
+    if(start>=target){start=target;clearInterval(timer)}
+    el.textContent=Math.floor(start)+suffix;
+  },step);
+}
+const statsObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('[data-target]').forEach(animateCounter);
+      statsObs.unobserve(e.target);
+    }
+  });
+},{threshold:.5});
+const statsBand=document.querySelector('.stats-band');
+if(statsBand)statsObs.observe(statsBand);
+
+// AVIS — bandeau défilant (CSS animation, pas de JS nécessaire)
+
+// FAQ
+function toggleFaq(btn){btn.closest('.faq-item').classList.toggle('open')}
+
+// POPUP
+window.addEventListener('scroll',()=>{if(window.scrollY>500)document.getElementById('popup').classList.add('show')},{passive:true})
+</script>
+</body>
+</html>
